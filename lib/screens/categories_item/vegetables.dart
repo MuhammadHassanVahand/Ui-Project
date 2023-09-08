@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini_ui_project/constan/appColors.dart';
-import 'package:mini_ui_project/data/recomendedProduct.dart';
+import 'package:mini_ui_project/data/vegetables.dart';
 import 'package:mini_ui_project/widget/appTopContainer.dart';
 import 'package:mini_ui_project/widget/home_screen_searchbar.dart';
 
@@ -33,18 +33,18 @@ class _VegetablesState extends State<Vegetables>
         child: Scaffold(
       body: Column(
         children: [
-          TopBar(text: "Text"),
+          TopBar(text: "Vegetables"),
           TabBar(
             controller: _tabController,
             tabs: [
               Tab(
-                text: "Text",
+                text: "Leafy Green",
               ),
               Tab(
-                text: "Text",
+                text: "Root Vegetables",
               ),
               Tab(
-                text: "Text",
+                text: "CruciferousVegetables",
               ),
             ],
             unselectedLabelColor: AppColors.black100,
@@ -53,9 +53,101 @@ class _VegetablesState extends State<Vegetables>
                 borderRadius: BorderRadius.circular(90),
                 color: AppColors.yellow),
           ),
-          Expanded(child: TabBarView(controller: _tabController, children: []))
+          Expanded(
+              child: TabBarView(controller: _tabController, children: [
+            LeafyGreens(),
+            RootVegetables(),
+            CruciferousVegetables(),
+          ]))
         ],
       ),
     ));
+  }
+}
+
+class LeafyGreens extends StatefulWidget {
+  const LeafyGreens({super.key});
+
+  @override
+  State<LeafyGreens> createState() => _LeafyGreensState();
+}
+
+class _LeafyGreensState extends State<LeafyGreens> {
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 263, crossAxisSpacing: 2, mainAxisSpacing: 2),
+      itemCount: leafyGreens.length,
+      itemBuilder: (context, index) {
+        return HomeScreenGridItem(
+          networkImage: leafyGreens[index]["image"][0],
+          productName: leafyGreens[index]["name"],
+          productType: leafyGreens[index]["type"],
+          price: leafyGreens[index]["price"],
+          details: leafyGreens[index]["details"],
+          imageCount: leafyGreens[index]["image"].length,
+          imagesForSlider: leafyGreens[index]["image"],
+        );
+      },
+    );
+  }
+}
+
+class RootVegetables extends StatefulWidget {
+  const RootVegetables({super.key});
+
+  @override
+  State<RootVegetables> createState() => _RootVegetablesState();
+}
+
+class _RootVegetablesState extends State<RootVegetables> {
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 263, crossAxisSpacing: 2, mainAxisSpacing: 2),
+      itemCount: rootVegetables.length,
+      itemBuilder: (context, index) {
+        return HomeScreenGridItem(
+          networkImage: rootVegetables[index]["image"][0],
+          productName: rootVegetables[index]["name"],
+          productType: rootVegetables[index]["type"],
+          price: rootVegetables[index]["price"],
+          details: rootVegetables[index]["details"],
+          imageCount: rootVegetables[index]["image"].length,
+          imagesForSlider: rootVegetables[index]["image"],
+        );
+      },
+    );
+  }
+}
+
+class CruciferousVegetables extends StatefulWidget {
+  const CruciferousVegetables({super.key});
+
+  @override
+  State<CruciferousVegetables> createState() => _CruciferousVegetablesState();
+}
+
+class _CruciferousVegetablesState extends State<CruciferousVegetables> {
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 263, crossAxisSpacing: 2, mainAxisSpacing: 2),
+      itemCount: cruciferousVegetables.length,
+      itemBuilder: (context, index) {
+        return HomeScreenGridItem(
+          networkImage: cruciferousVegetables[index]["image"][0],
+          productName: cruciferousVegetables[index]["name"],
+          productType: cruciferousVegetables[index]["type"],
+          price: cruciferousVegetables[index]["price"],
+          details: cruciferousVegetables[index]["details"],
+          imageCount: cruciferousVegetables[index]["image"].length,
+          imagesForSlider: cruciferousVegetables[index]["image"],
+        );
+      },
+    );
   }
 }
