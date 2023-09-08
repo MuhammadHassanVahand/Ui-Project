@@ -71,7 +71,7 @@ class ItemDetails extends StatelessWidget {
                         ],
                       ),
                       AppSmallText(
-                        text: "${price}",
+                        text: "Reg. Price ${price}",
                         color: AppColors.black45,
                       )
                     ],
@@ -81,17 +81,26 @@ class ItemDetails extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      FaIcon(
-                        FontAwesomeIcons.star,
+                      Icon(
+                        Icons.star,
                         color: AppColors.yellow,
                       ),
-                      FaIcon(FontAwesomeIcons.star),
-                      FaIcon(FontAwesomeIcons.star),
-                      FaIcon(FontAwesomeIcons.star),
-                      FaIcon(
-                        FontAwesomeIcons.starHalfStroke,
+                      Icon(
+                        Icons.star,
                         color: AppColors.yellow,
-                      )
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: AppColors.yellow,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: AppColors.yellow,
+                      ),
+                      Icon(
+                        Icons.star_half,
+                        color: AppColors.yellow,
+                      ),
                     ],
                   ),
                   SizedBox(

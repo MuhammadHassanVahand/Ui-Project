@@ -168,7 +168,7 @@ class _HomeScreenGridItemState extends State<HomeScreenGridItem> {
                   AppSmallText(
                     text: widget.productName,
                     color: AppColors.black100,
-                    size: 20,
+                    size: 15,
                   ),
                   AppSmallText(
                     text: widget.productType,

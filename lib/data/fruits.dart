@@ -1,222 +1,243 @@
 List<Map> citrusFruits = [
   {
-    "name": "Spinash",
+    "name": "Oranges",
     "image": [
-      "https://specialtyproduce.com/sppics/5113.png",
-      "https://hips.hearstapps.com/hmg-prod/images/981/articles/2018/02/growingspinach-1000-0-1519138802.jpg"
-    ],
-    "price": 50.0,
-    "type": "Leafy",
-    "details": "asdasdasd"
-  },
-  {
-    "name": "Kale",
-    "image": [
-      "https://www.heirloomfarms.pk/wp-content/uploads/2019/06/kale2.jpg",
-      "https://www.realsimple.com/thmb/GMvmDS6FfN-8P6ueBPaSd6HpOl8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/kale-not-salad-2000-5f64ac4a932b4940a56ade509e841408.jpg"
-    ],
-    "price": 50.0,
-    "type": "Leafy",
-    "details": "asdasdasd"
-  },
-  {
-    "name": "Romaine Lettuce",
-    "image": [
-      "https://www.eatthis.com/wp-content/uploads/sites/4/2021/03/romaine-lettuce.jpg?quality=82&strip=1",
-      "https://exoticvegetablespune.com/wp-content/uploads/2019/08/ROMAIN-LETTUCE-2.jpeg"
-    ],
-    "price": 80.0,
-    "type": "Leafy",
-    "details": "asdasdasd"
-  },
-  {
-    "name": "Swiss Chard",
-    "image": [
-      "https://dutchgrowers.net/cdn/shop/products/image_c7a72fa5-edf8-42c6-a4b7-b86f44b0918d_1200x1355.jpg?v=1585193121",
-      "https://www.marthastewart.com/thmb/zpt01aeFUSoTIZre9JWNRSQA0TM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/picked-chard-0317-102915806_horiz-1222-3d2a3051c72745fb81e6ed9070c5be09.jpg"
-    ],
-    "price": 100.0,
-    "type": "Leafy",
-    "details": "asdasdasd"
-  },
-  {
-    "name": "Arugula ",
-    "image": [
-      "https://www.kitchengardenseeds.com/media/catalog/product/cache/0e0f8b55cb1429f46d7faa85732ae262/r/u/rustic_arugula.jpg",
-      "https://www.bhg.com/thmb/KimSv0K-_PUV61ZOQOEukXrqAZo=/550x0/filters:no_upscale():strip_icc()/100439119-11134c002d4547479f3c3f4ea93c6968.jpg"
-    ],
-    "price": 40.0,
-    "type": "Leafy",
-    "details": "asdasdasd"
-  },
-  {
-    "name": "Collard Greens",
-    "image": [
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8CIEQC0nHcrW4hsX22A10rpmTUnSeVeNFIc7sEGDmj4xGXzU7famVXjKY1IRUIh8vBas&usqp=CAU",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrb8deDitiRi6DizggU0KsRPC0HZ_7CXZ0chuplSOoQX3sxrb7hRLEta6YrsV_vUWDX90&usqp=CAU"
-    ],
-    "price": 60.0,
-    "type": "Leafy",
-    "details": "asdasdasd"
-  },
-  {
-    "name": "Bok Choy",
-    "image": [
-      "https://res.cloudinary.com/hksqkdlah/image/upload/c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,h_0.99,q_auto:low,w_0.99/v1/CIO%20Web%20Articles/CIO%20Articles%202022/HTCs/SIL_Bok_Choy",
-      "https://cdn.pixabay.com/photo/2017/07/11/19/29/bokchoy-2494763_1280.png"
-    ],
-    "price": 70.0,
-    "type": "Leafy",
-    "details": "asdasdasd"
-  },
-];
-
-//==============================================================================
-
-List<Map> rootVegetables = [
-  {
-    "name": "Carrots",
-    "image": [
-      "https://blog-images-1.pharmeasy.in/blog/production/wp-content/uploads/2021/04/23175719/shutterstock_440493100-1.jpg",
-      "https://www.liveeatlearn.com/wp-content/uploads/2018/04/carrot-on-white-5.jpg"
-    ],
-    "price": 110.0,
-    "type": "Root",
-    "details": "asdasdasd"
-  },
-  {
-    "name": "Potatoes",
-    "image": [
-      "https://thumbs.dreamstime.com/b/raw-potatoes-white-background-61790721.jpg",
-      "https://cdn.mos.cms.futurecdn.net/iC7HBvohbJqExqvbKcV3pP.jpg"
-    ],
-    "price": 60.0,
-    "type": "Root",
-    "details": "asdasdasd"
-  },
-  {
-    "name": "Beets",
-    "image": [
-      "https://images-prod.healthline.com/hlcmsresource/images/AN_images/AN172-Beets-1296x728-Header.jpg",
-      "https://d2jx2rerrg6sh3.cloudfront.net/images/Article_Images/ImageForArticle_22650_16546872636205451.jpg"
-    ],
-    "price": 80.0,
-    "type": "Root",
-    "details": "asdasdasd"
-  },
-  {
-    "name": "Radishes",
-    "image": [
-      "https://specialtyproduce.com/sppics/1241.png",
-      "https://media.healthyfood.com/wp-content/uploads/2016/09/In-season-Aug-Radishes-Thinkstock_154289238.jpg"
-    ],
-    "price": 100.0,
-    "type": "Root",
-    "details": "asdasdasd"
-  },
-  {
-    "name": "Sweet Potatoes",
-    "image": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Ipomoea_batatas_006.JPG/800px-Ipomoea_batatas_006.JPG",
-      "https://www.eatthis.com/wp-content/uploads/sites/4/2021/07/sweet-potato.jpg?quality=82&strip=1"
-    ],
-    "price": 90.0,
-    "type": "Root",
-    "details": "asdasdasd"
-  },
-  {
-    "name": "Turnips",
-    "image": [
-      "https://i0.wp.com/post.healthline.com/wp-content/uploads/2019/11/turnip-root-vegetable-1296x728-header-1296x728.jpg?w=1155&h=1528",
-      "https://static.toiimg.com/photo/97058379.cms"
-    ],
-    "price": 160.0,
-    "type": "Root",
-    "details": "asdasdasd"
-  },
-  {
-    "name": "Rutabagas",
-    "image": [
-      "https://www.columbiatribune.com/gcdn/authoring/2010/11/17/NCDT/ghows-MO-a1c10bea-6818-421e-b837-42df86e2f0a8-e89dce51.jpeg?width=1200&disable=upscale&format=pjpg&auto=webp",
-      "https://www.foodrepublic.com/img/gallery/how-to-eat-rutabaga-and-why-you-should/intro-1687521773.jpg"
-    ],
-    "price": 70.0,
-    "type": "Root",
-    "details": "asdasdasd"
-  },
-];
-
-//==============================================================================
-
-List<Map> cruciferousVegetables = [
-  {
-    "name": "Broccoli",
-    "image": [
-      "https://t4.ftcdn.net/jpg/01/38/59/65/360_F_138596528_dG7J8xrEXROzGkE0PCgKjDWyclYUWfzz.jpg",
-      "https://apneemandi.com/wp-content/uploads/2023/05/Broccoli1.jpg"
+      "https://cdn.create.vista.com/api/media/small/1176895/stock-photo-oranges",
+      "https://www.tastingtable.com/img/gallery/the-science-behind-seedless-oranges/intro-1655473463.jpg"
     ],
     "price": 150.0,
-    "type": "Cruciferous",
-    "details": "asdasdasd"
+    "type": "Citrus",
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
-    "name": "Cauliflower",
+    "name": "Lemons",
     "image": [
-      "https://domf5oio6qrcr.cloudfront.net/medialibrary/5299/h1018g16207257715328.jpg",
-      "https://media.istockphoto.com/id/511868689/photo/fresh-cauliflower-with-pieces-isolated-on-white.jpg?s=612x612&w=0&k=20&c=6HjOXfDxV2B5Oazl4jK69GiORAtQEPS7WYpTAJ-KW24="
+      "https://m.media-amazon.com/images/I/61y5ZCf1KJL._AC_UF1000,1000_QL80_.jpg",
+      "https://www.shutterstock.com/shutterstock/photos/1727353507/display_1500/stock-photo-lemon-fruit-with-leaf-isolate-lemon-whole-half-slice-leaves-on-white-lemon-slices-with-zest-1727353507.jpg"
     ],
-    "price": 120.0,
-    "type": "Cruciferous",
-    "details": "asdasdasd"
+    "price": 110.0,
+    "type": "Citrus",
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
-    "name": "Brussels Sprouts",
+    "name": "Limes",
     "image": [
-      "https://bcfresh.ca/wp-content/uploads/2021/11/Brussels-sprouts.jpg",
-      "https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2021/5/26/0/Original_LeesaMorales_10FoodsRichinVitaminC-8.jpg.rend.hgtvcom.616.462.suffix/1622066787355.jpeg"
+      "https://grospace.co.za/wp-content/uploads/2021/03/GroSpace-Limes.jpg",
+      "https://cdn-prod.medicalnewstoday.com/content/images/articles/304/304448/limes.jpg"
     ],
-    "price": 180.0,
-    "type": "Cruciferous",
-    "details": "asdasdasd"
+    "price": 115.0,
+    "type": "Citrus",
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
-    "name": "Cabbage",
+    "name": "Grapefruits",
     "image": [
-      "https://pictures.grocerapps.com/original/grocerapp-cabbage--627d06afb7e7e.jpeg",
-      "https://www.growingproduce.com/wp-content/uploads/2023/07/w_Manessa_Cabbage_Rijk-Zwaan_gallery.jpg"
-    ],
-    "price": 170.0,
-    "type": "Cruciferous",
-    "details": "asdasdasd"
-  },
-  {
-    "name": "Kohlrabi",
-    "image": [
-      "https://assets.bonappetit.com/photos/57c5d0e54395c0582bb6348c/16:9/w_2560%2Cc_limit/kohlrabi.jpg",
-      "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2021/12/17/kohlrabi-green-surface.jpg.rend.hgtvcom.1280.1280.suffix/1639724957419.jpeg"
-    ],
-    "price": 90.0,
-    "type": "Cruciferous",
-    "details": "asdasdasd"
-  },
-  {
-    "name": "Broccolini ",
-    "image": [
-      "https://assets.bonappetit.com/photos/5c76b5292998395803644301/1:1/w_5034,h_5034,c_limit/Basically-Broccolini.jpg",
-      "https://hips.hearstapps.com/hmg-prod/images/190322-broccolini-horizontal-3-1553721019.png?crop=0.8891228070175439xw:1xh;center,top&resize=1200:*"
+      "https://www.hopkinsmedicine.org/-/media/images/health/3_-wellness/food-and-nutrition/grapefruit-teaser.png",
+      "https://www.heart.org/-/media/Images/News/2020/January-2020/0117Grapefruit_SC.jpg"
     ],
     "price": 100.0,
-    "type": "Cruciferous",
-    "details": "asdasdasd"
+    "type": "Citrus",
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
-    "name": "Roman Broccoli",
+    "name": "Tangerine",
     "image": [
-      "https://www.allrecipes.com/thmb/0l8uDFHCR0ioXIXYDGgU0f21AAY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/102776320-fresh-romanesco-photo-by-meredith-cropped-192529607f2f4d61a685500b737b9714.jpg",
-      "https://www.melissas.com/cdn/shop/products/image-of-romanesco-vegetables-14763867340844_600x600.jpg?v=1616821353"
+      "https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/article_1200_800_fallback/public/2020-11/clementines%C2%A9iStock.jpg?itok=y_4cSdr8",
+      "https://images.pexels.com/photos/327098/pexels-photo-327098.jpeg?cs=srgb&dl=pexels-pixabay-327098.jpg&fm=jpg"
+    ],
+    "price": 140.0,
+    "type": "Citrus",
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
+  },
+  {
+    "name": "Clementines",
+    "image": [
+      "https://www.shutterstock.com/shutterstock/photos/733116394/display_1500/stock-photo-tangerine-or-clementine-with-green-leaf-and-slices-isolated-on-white-background-733116394.jpg",
+      "https://images.immediate.co.uk/production/volatile/sites/30/2020/02/Clementine-2b4d761.jpg?quality=90&resize=556,505"
+    ],
+    "price": 160.0,
+    "type": "Citrus",
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
+  },
+  {
+    "name": "Kumquats",
+    "image": [
+      "https://supplements.selfdecode.com/app/uploads/2019/04/Kumquat-1.jpeg",
+      "https://foodwise.org/wp-content/uploads/2022/06/kumquats1-1024x683.jpg"
+    ],
+    "price": 150.0,
+    "type": "Citrus",
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
+  },
+];
+
+//==============================================================================
+
+List<Map> berries = [
+  {
+    "name": "Strawberries",
+    "image": [
+      "https://thumbs.dreamstime.com/b/three-strawberries-strawberry-leaf-white-background-114284301.jpg",
+      "https://www.liveeatlearn.com/wp-content/uploads/2016/07/strawberries-photo-vert.jpg"
+    ],
+    "price": 190.0,
+    "type": "Berries",
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
+  },
+  {
+    "name": "Blueberries",
+    "image": [
+      "https://img.freepik.com/free-vector/fresh-blueberries-with-water-drops-green-leaves-white-background-realistic-vector-illustration_1284-77363.jpg?w=2000",
+      "https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Blueberries-in-a-bowl-ffafdbe.jpg"
+    ],
+    "price": 220.0,
+    "type": "Berries",
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
+  },
+  {
+    "name": "Raspberries",
+    "image": [
+      "https://cdn.britannica.com/83/156583-050-4A1FABB5/Red-raspberries.jpg",
+      "https://images.immediate.co.uk/production/volatile/sites/30/2023/07/Raspberries-02-4bc2ac6.jpg?quality=90&resize=440,400"
+    ],
+    "price": 280.0,
+    "type": "Berries",
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
+  },
+  {
+    "name": "Blackberries",
+    "image": [
+      "https://blog-images-1.pharmeasy.in/blog/production/wp-content/uploads/2021/04/28194916/shutterstock_1933979129-1.jpg",
+      "https://stylesatlife.com/wp-content/uploads/2019/09/Benefits-Of-Blackberries-For-Skin-Hair-Health-1.jpg"
+    ],
+    "price": 250.0,
+    "type": "Berries",
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
+  },
+  {
+    "name": "Cranberries",
+    "image": [
+      "https://media.istockphoto.com/id/481615534/photo/cranberries.jpg?s=612x612&w=0&k=20&c=NpDtP-xO8CaVZO8UuMBO9LCnx1j9nCch6c8_p-kmOB8=",
+      "https://www.seriouseats.com/thmb/XbejH0cJylmtzwsn3qkUDpP_pwc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__2014__11__cranberries-shutterstock_155418920-4753bf4ff5a34ad2ad526bc423f8cedf.jpg"
+    ],
+    "price": 260.0,
+    "type": "Berries",
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
+  },
+  {
+    "name": "Gooseberries",
+    "image": [
+      "https://commonsensehome.com/wp-content/uploads/2023/02/green-and-red-gooseberries.jpg",
+      "https://www.allrecipes.com/thmb/9S5wZngN3rGIk4aTzt7EimX0bVE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Gooseberries-by-Kindra-Clineff-2000-86c9ea999f6f4ec190e8e5a184377ab8.jpg"
+    ],
+    "price": 360.0,
+    "type": "Berries",
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
+  },
+  {
+    "name": "Boysenberries",
+    "image": [
+      "https://gardenerspath.com/wp-content/uploads/2020/05/How-to-Grow-and-Care-for-Boysenberry-Bushes-Featured.jpg",
+      "https://www.newlands.ie/cdn/shop/products/il_fullxfull.3747744507_hnvh_1200x1200.jpg?v=1681765879"
     ],
     "price": 270.0,
-    "type": "Cruciferous",
-    "details": "asdasdasd"
+    "type": "Berries",
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
+  },
+];
+
+//==============================================================================
+
+List<Map> tropicalFruits = [
+  {
+    "name": "Pineapples",
+    "image": [
+      "https://thumbs.dreamstime.com/b/pineapple-slices-isolated-white-30985039.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-2QrKj-qsIk5QXt00y9Fj143s_T2Pa9snpA&usqp=CAU"
+    ],
+    "price": 150.0,
+    "type": "Tropical",
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
+  },
+  {
+    "name": "Mangoes",
+    "image": [
+      "https://cdn-prod.medicalnewstoday.com/content/images/articles/322/322096/mangoes-chopped-and-fresh.jpg",
+      "https://static.toiimg.com/photo/90941559.cms"
+    ],
+    "price": 220.0,
+    "type": "Tropical",
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
+  },
+  {
+    "name": "Bananas",
+    "image": [
+      "https://www.hsph.harvard.edu/nutritionsource/wp-content/uploads/sites/30/2018/08/bananas-1354785_1920.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQztnzufyGR3lcCg3ArlIaZRAUt7lonAirrbw&usqp=CAU"
+    ],
+    "price": 100.0,
+    "type": "Tropical",
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
+  },
+  {
+    "name": "Papayas",
+    "image": [
+      "https://www.eatme.eu/media/0wnd2gro/papaya-formosa-productfoto.jpg?anchor=center&mode=crop&width=1200&height=630&rnd=132629704379370000",
+      "https://m.media-amazon.com/images/I/61CuiyI4aBL._AC_UF1000,1000_QL80_.jpg"
+    ],
+    "price": 170.0,
+    "type": "Tropical",
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
+  },
+  {
+    "name": "Kiwis",
+    "image": [
+      "https://www.shutterstock.com/shutterstock/photos/699645964/display_1500/stock-photo-ripe-whole-kiwi-fruit-and-half-kiwi-fruit-isolated-on-white-background-699645964.jpg",
+      "https://www.tastingtable.com/img/gallery/most-of-the-worlds-kiwi-come-from-this-country/l-intro-1666303251.jpg"
+    ],
+    "price": 190.0,
+    "type": "Tropical",
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
+  },
+  {
+    "name": "Guavas",
+    "image": [
+      "https://media.istockphoto.com/id/1224636159/photo/closeup-of-a-red-guava-cut-in-half-in-the-background-several-guavas-and-green-leaf.jpg?s=612x612&w=0&k=20&c=KJ9YilkRRuFh0bnw64Ol0IZDfoQF7UIxyC6dRVIjaoA=",
+      "https://www.foodrepublic.com/img/gallery/how-to-eat-guava-and-why-you-should/l-intro-1684540416.jpg"
+    ],
+    "price": 190.0,
+    "type": "Tropical",
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
+  },
+  {
+    "name": "Passion Fruits",
+    "image": [
+      "https://insanelygoodrecipes.com/wp-content/uploads/2023/01/Passion-Fruit-in-a-Glass-Jar-with-Fresh-Fruits.jpg",
+      "https://thefreshandnatural.com/wp-content/uploads/2020/05/PASSION-FRUIT-KG.jpg"
+    ],
+    "price": 270.0,
+    "type": "Tropical",
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
 ];

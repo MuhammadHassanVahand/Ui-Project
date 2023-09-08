@@ -7,7 +7,8 @@ List<Map> leafyGreens = [
     ],
     "price": 50.0,
     "type": "Leafy",
-    "details": "asdasdasd"
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
     "name": "Kale",
@@ -17,7 +18,8 @@ List<Map> leafyGreens = [
     ],
     "price": 50.0,
     "type": "Leafy",
-    "details": "asdasdasd"
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
     "name": "Romaine Lettuce",
@@ -27,7 +29,8 @@ List<Map> leafyGreens = [
     ],
     "price": 80.0,
     "type": "Leafy",
-    "details": "asdasdasd"
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
     "name": "Swiss Chard",
@@ -37,7 +40,8 @@ List<Map> leafyGreens = [
     ],
     "price": 100.0,
     "type": "Leafy",
-    "details": "asdasdasd"
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
     "name": "Arugula ",
@@ -47,7 +51,8 @@ List<Map> leafyGreens = [
     ],
     "price": 40.0,
     "type": "Leafy",
-    "details": "asdasdasd"
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
     "name": "Collard Greens",
@@ -57,7 +62,8 @@ List<Map> leafyGreens = [
     ],
     "price": 60.0,
     "type": "Leafy",
-    "details": "asdasdasd"
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
     "name": "Bok Choy",
@@ -67,7 +73,8 @@ List<Map> leafyGreens = [
     ],
     "price": 70.0,
     "type": "Leafy",
-    "details": "asdasdasd"
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
 ];
 
@@ -82,7 +89,8 @@ List<Map> rootVegetables = [
     ],
     "price": 110.0,
     "type": "Root",
-    "details": "asdasdasd"
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
     "name": "Potatoes",
@@ -92,7 +100,8 @@ List<Map> rootVegetables = [
     ],
     "price": 60.0,
     "type": "Root",
-    "details": "asdasdasd"
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
     "name": "Beets",
@@ -102,7 +111,8 @@ List<Map> rootVegetables = [
     ],
     "price": 80.0,
     "type": "Root",
-    "details": "asdasdasd"
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
     "name": "Radishes",
@@ -112,7 +122,8 @@ List<Map> rootVegetables = [
     ],
     "price": 100.0,
     "type": "Root",
-    "details": "asdasdasd"
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
     "name": "Sweet Potatoes",
@@ -122,7 +133,8 @@ List<Map> rootVegetables = [
     ],
     "price": 90.0,
     "type": "Root",
-    "details": "asdasdasd"
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
     "name": "Turnips",
@@ -132,7 +144,8 @@ List<Map> rootVegetables = [
     ],
     "price": 160.0,
     "type": "Root",
-    "details": "asdasdasd"
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
     "name": "Rutabagas",
@@ -142,7 +155,8 @@ List<Map> rootVegetables = [
     ],
     "price": 70.0,
     "type": "Root",
-    "details": "asdasdasd"
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
 ];
 
@@ -157,7 +171,8 @@ List<Map> cruciferousVegetables = [
     ],
     "price": 150.0,
     "type": "Cruciferous",
-    "details": "asdasdasd"
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
     "name": "Cauliflower",
@@ -167,7 +182,8 @@ List<Map> cruciferousVegetables = [
     ],
     "price": 120.0,
     "type": "Cruciferous",
-    "details": "asdasdasd"
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
     "name": "Brussels Sprouts",
@@ -177,7 +193,8 @@ List<Map> cruciferousVegetables = [
     ],
     "price": 180.0,
     "type": "Cruciferous",
-    "details": "asdasdasd"
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
     "name": "Cabbage",
@@ -187,7 +204,8 @@ List<Map> cruciferousVegetables = [
     ],
     "price": 170.0,
     "type": "Cruciferous",
-    "details": "asdasdasd"
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
     "name": "Kohlrabi",
@@ -197,7 +215,8 @@ List<Map> cruciferousVegetables = [
     ],
     "price": 90.0,
     "type": "Cruciferous",
-    "details": "asdasdasd"
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
     "name": "Broccolini ",
@@ -207,7 +226,8 @@ List<Map> cruciferousVegetables = [
     ],
     "price": 100.0,
     "type": "Cruciferous",
-    "details": "asdasdasd"
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
     "name": "Roman Broccoli",
@@ -217,6 +237,7 @@ List<Map> cruciferousVegetables = [
     ],
     "price": 270.0,
     "type": "Cruciferous",
-    "details": "asdasdasd"
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
 ];
