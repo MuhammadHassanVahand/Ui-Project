@@ -12,4 +12,5 @@ class AppColors {
   static Color black20 = Color(0xffC5CDD2);
   static Color black10 = Color(0xffE7ECF0);
   static Color black1 = Color(0xffF8F9FB);
+  static Color iconcolor = Color(0xffE0B420);
 }

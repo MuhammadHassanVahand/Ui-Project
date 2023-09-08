@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mini_ui_project/constan/appColors.dart';
 import 'package:mini_ui_project/constan/appIcons.dart';
+import 'package:mini_ui_project/data/recomendedProduct.dart';
 import 'package:mini_ui_project/widget/appLargeText.dart';
 import 'package:mini_ui_project/widget/appSmallText.dart';
+import 'package:mini_ui_project/widget/appTopContainer.dart';
+import 'package:mini_ui_project/widget/home_screen_searchbar.dart';
+import 'package:mini_ui_project/widget/home_slider.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -14,114 +19,71 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double imageHeight = screenWidth < 600 ? 95 : 200;
+    double boxSize = screenWidth < 700 ? 2 : 30;
+    double largeTextSize = screenWidth < 700 ? 20 : 30;
+
     return SafeArea(
-        child: Scaffold(
-      body: Column(
-        children: [
-          Container(
-            padding: EdgeInsets.only(top: 15, left: 5, right: 5),
-            width: double.infinity,
-            height: 200,
-            color: AppColors.blue,
-            child: Column(
-              children: [
-                ListTile(
-                  title: AppLargeText(
-                    text: "Hey Halal",
-                    color: AppColors.black1,
-                    size: 22,
-                  ),
-                  trailing: AppIcons.bag,
-                  iconColor: AppColors.black1,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: TextField(
-                    style: TextStyle(color: AppColors.black1),
-                    decoration: InputDecoration(
-                      hintText: "Search Products or Store",
-                      hintStyle: TextStyle(color: AppColors.black45),
-                      prefixIconColor: AppColors.black1,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(100),
-                      ),
-                      fillColor: AppColors.darkBlue,
-                      filled: true,
-                      prefixIcon: AppIcons.search,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        width: 200,
-                        height: 45,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            AppSmallText(
-                              text: "Delivery To",
-                              color: AppColors.black45,
-                            ),
-                            Row(
-                              children: [
-                                AppLargeText(
-                                  text: "Green Way 3000,Sylhet",
-                                  color: AppColors.black10,
-                                  size: 14,
-                                ),
-                                Icon(
-                                  Icons.arrow_drop_down,
-                                  color: AppColors.black1,
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        width: 100,
-                        height: 45,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            AppSmallText(
-                              text: "WITHIN",
-                              color: AppColors.black45,
-                            ),
-                            Row(
-                              children: [
-                                AppLargeText(
-                                  text: "1 HOUR",
-                                  color: AppColors.black1,
-                                  size: 14,
-                                ),
-                                Icon(
-                                  Icons.arrow_drop_down,
-                                  color: AppColors.black1,
-                                )
-                              ],
-                            )
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                )
-              ],
+      child: Scaffold(
+        extendBody: true,
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: double.infinity,
+              height: 200,
+              color: AppColors.blue,
+              child: TopContainer(
+                contant: SearchAndOption(),
+              ),
             ),
-          )
-        ],
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  HomeBanner(),
+                  HomeBanner(),
+                  HomeBanner(),
+                  HomeBanner(),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 12),
+              child: AppSmallText(
+                text: "Recommended",
+                color: AppColors.black100,
+                size: 30,
+              ),
+            ),
+            Expanded(
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 263,
+                    crossAxisSpacing: 2,
+                    mainAxisSpacing: 2),
+                itemCount: recomanded.length,
+                itemBuilder: (context, index) {
+                  return HomeScreenGridItem(
+                    networkImage: recomanded[index]["image"][0],
+                    productName: recomanded[index]["name"],
+                    productType: recomanded[index]["type"],
+                    price: recomanded[index]["price"],
+                    details: recomanded[index]["details"],
+                    imageCount: recomanded[index]["image"].length,
+                    imagesForSlider: recomanded[index]["image"],
+                  );
+                },
+              ),
+            )
+          ],
+        ),
       ),
-    ));
+    );
   }
 }
