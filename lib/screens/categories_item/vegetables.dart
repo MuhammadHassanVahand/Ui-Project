@@ -48,10 +48,15 @@ class _VegetablesState extends State<Vegetables>
                 ),
               ],
               unselectedLabelColor: AppColors.black100,
+              labelPadding: EdgeInsets.symmetric(horizontal: 8),
               labelColor: AppColors.black1,
               indicator: BoxDecoration(
-                  borderRadius: BorderRadius.circular(90),
-                  color: AppColors.yellow),
+                borderRadius: BorderRadius.circular(90),
+                color: AppColors.yellow,
+                border: Border.all(
+                  color: AppColors.black100,
+                ),
+              ),
             ),
             Expanded(
                 child: TabBarView(controller: _tabController, children: [
