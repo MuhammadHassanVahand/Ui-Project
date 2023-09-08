@@ -30,38 +30,39 @@ class _VegetablesState extends State<Vegetables>
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
-      body: Column(
-        children: [
-          TopBar(text: "Vegetables"),
-          TabBar(
-            controller: _tabController,
-            tabs: [
-              Tab(
-                text: "Leafy Green",
-              ),
-              Tab(
-                text: "Root Vegetables",
-              ),
-              Tab(
-                text: "CruciferousVegetables",
-              ),
-            ],
-            unselectedLabelColor: AppColors.black100,
-            labelColor: AppColors.black1,
-            indicator: BoxDecoration(
-                borderRadius: BorderRadius.circular(90),
-                color: AppColors.yellow),
-          ),
-          Expanded(
-              child: TabBarView(controller: _tabController, children: [
-            LeafyGreens(),
-            RootVegetables(),
-            CruciferousVegetables(),
-          ]))
-        ],
+      child: Scaffold(
+        body: Column(
+          children: [
+            TopBar(text: "Vegetables"),
+            TabBar(
+              controller: _tabController,
+              tabs: [
+                Tab(
+                  text: "Leafy Green",
+                ),
+                Tab(
+                  text: "Root Vegetables",
+                ),
+                Tab(
+                  text: "CruciferousVegetables",
+                ),
+              ],
+              unselectedLabelColor: AppColors.black100,
+              labelColor: AppColors.black1,
+              indicator: BoxDecoration(
+                  borderRadius: BorderRadius.circular(90),
+                  color: AppColors.yellow),
+            ),
+            Expanded(
+                child: TabBarView(controller: _tabController, children: [
+              LeafyGreens(),
+              RootVegetables(),
+              CruciferousVegetables(),
+            ]))
+          ],
+        ),
       ),
-    ));
+    );
   }
 }
 

@@ -152,7 +152,7 @@ class _HomeScreenGridItemState extends State<HomeScreenGridItem> {
             children: [
               Container(
                 width: double.infinity,
-                height: 93,
+                height: 99,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: Image.network(
@@ -179,7 +179,7 @@ class _HomeScreenGridItemState extends State<HomeScreenGridItem> {
                     children: [
                       Container(
                         width: 130,
-                        height: 20,
+                        height: 22,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(90),
                           color: AppColors.black1,
@@ -206,7 +206,7 @@ class _HomeScreenGridItemState extends State<HomeScreenGridItem> {
                               FaIcon(
                                 FontAwesomeIcons.circlePlus,
                                 color: AppColors.blue,
-                                size: 20,
+                                size: 22,
                               )
                             ],
                           ),

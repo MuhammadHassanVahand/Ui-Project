@@ -83,7 +83,7 @@ class ImageSlider extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                     image: NetworkImage(imagesForSlider[index]),
-                    fit: BoxFit.cover),
+                    fit: BoxFit.fill),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,

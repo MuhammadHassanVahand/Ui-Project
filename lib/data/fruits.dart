@@ -1,4 +1,4 @@
-List<Map> leafyGreens = [
+List<Map> citrusFruits = [
   {
     "name": "Spinash",
     "image": [

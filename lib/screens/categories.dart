@@ -70,7 +70,7 @@ class _CatedoriesState extends State<Catedories> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => Vegetables(),
+                            builder: (context) => category[index]["subtype"],
                           ),
                         );
                       },
