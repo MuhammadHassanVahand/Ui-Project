@@ -48,12 +48,10 @@ class _ChineseFoodState extends State<ChineseFood>
                 ),
               ],
               unselectedLabelColor: AppColors.black100,
-              labelPadding: EdgeInsets.symmetric(horizontal: 8),
               labelColor: AppColors.black1,
               indicator: BoxDecoration(
                 borderRadius: BorderRadius.circular(90),
                 color: AppColors.yellow,
-                border: Border.all(color: AppColors.black100),
               ),
             ),
             Expanded(

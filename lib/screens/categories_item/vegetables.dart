@@ -36,7 +36,7 @@ class _VegetablesState extends State<Vegetables>
             TopBar(text: "Vegetables"),
             TabBar(
               controller: _tabController,
-              tabs: [
+              tabs: const [
                 Tab(
                   text: "Leafy Green",
                 ),
@@ -48,18 +48,14 @@ class _VegetablesState extends State<Vegetables>
                 ),
               ],
               unselectedLabelColor: AppColors.black100,
-              labelPadding: EdgeInsets.symmetric(horizontal: 8),
               labelColor: AppColors.black1,
               indicator: BoxDecoration(
                 borderRadius: BorderRadius.circular(90),
                 color: AppColors.yellow,
-                border: Border.all(
-                  color: AppColors.black100,
-                ),
               ),
             ),
             Expanded(
-                child: TabBarView(controller: _tabController, children: [
+                child: TabBarView(controller: _tabController, children: const [
               LeafyGreens(),
               RootVegetables(),
               CruciferousVegetables(),
@@ -82,7 +78,7 @@ class _LeafyGreensState extends State<LeafyGreens> {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 263, crossAxisSpacing: 2, mainAxisSpacing: 2),
       itemCount: leafyGreens.length,
       itemBuilder: (context, index) {
@@ -111,7 +107,7 @@ class _RootVegetablesState extends State<RootVegetables> {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 263, crossAxisSpacing: 2, mainAxisSpacing: 2),
       itemCount: rootVegetables.length,
       itemBuilder: (context, index) {
@@ -140,7 +136,7 @@ class _CruciferousVegetablesState extends State<CruciferousVegetables> {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 263, crossAxisSpacing: 2, mainAxisSpacing: 2),
       itemCount: cruciferousVegetables.length,
       itemBuilder: (context, index) {

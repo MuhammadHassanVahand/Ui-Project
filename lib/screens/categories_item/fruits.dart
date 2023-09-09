@@ -47,12 +47,11 @@ class _FruitsState extends State<Fruits> with SingleTickerProviderStateMixin {
                 ),
               ],
               unselectedLabelColor: AppColors.black100,
-              labelPadding: EdgeInsets.symmetric(horizontal: 8),
               labelColor: AppColors.black1,
               indicator: BoxDecoration(
-                  borderRadius: BorderRadius.circular(90),
-                  color: AppColors.yellow,
-                  border: Border.all(color: AppColors.black100)),
+                borderRadius: BorderRadius.circular(90),
+                color: AppColors.yellow,
+              ),
             ),
             Expanded(
               child: TabBarView(
