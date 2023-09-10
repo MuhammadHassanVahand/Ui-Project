@@ -15,6 +15,7 @@ class TopContainer extends StatefulWidget {
   final SvgPicture? svgPicture;
   final Color backgroundColor;
   final double? height;
+  final Function? onCartUpdated;
 
   const TopContainer({
     Key? key,
@@ -25,6 +26,7 @@ class TopContainer extends StatefulWidget {
     this.backgroundColor = const Color(0xff2A4BA0),
     this.backIcon,
     this.height = 200,
+    this.onCartUpdated,
   }) : super(key: key);
 
   @override

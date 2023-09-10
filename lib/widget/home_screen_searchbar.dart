@@ -4,6 +4,7 @@ import 'package:mini_ui_project/data/addToCart.dart';
 import 'package:mini_ui_project/data/addToFavourie.dart';
 import 'package:mini_ui_project/screens/favourite.dart';
 import 'package:mini_ui_project/screens/productDetails.dart';
+import 'package:mini_ui_project/widget/appTopContainer.dart';
 
 import '../constan/appColors.dart';
 import '../constan/appIcons.dart';
@@ -104,6 +105,7 @@ class HomeScreenGridItem extends StatefulWidget {
   final String details;
   final int imageCount;
   final List<String> imagesForSlider;
+  final Function? onCartUpdated;
 
   const HomeScreenGridItem({
     super.key,
@@ -114,6 +116,7 @@ class HomeScreenGridItem extends StatefulWidget {
     required this.details,
     required this.imageCount,
     required this.imagesForSlider,
+    this.onCartUpdated,
   });
 
   @override
@@ -297,7 +300,7 @@ class _HomeScreenGridItemState extends State<HomeScreenGridItem> {
                                                 Duration(milliseconds: 600),
                                           ),
                                         );
-                                        setState(() {});
+                                        widget.onCartUpdated?.call();
                                       }
                                     },
                                   );

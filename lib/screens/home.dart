@@ -10,13 +10,19 @@ import 'package:mini_ui_project/widget/home_screen_searchbar.dart';
 import 'package:mini_ui_project/widget/home_slider.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+  const Home({
+    super.key,
+  });
 
   @override
   State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
+  void onCartUpdated() {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -34,7 +40,10 @@ class _HomeState extends State<Home> {
               width: double.infinity,
               height: 200,
               color: AppColors.blue,
-              child: const TopContainer(
+              child: TopContainer(
+                onCartUpdated: () {
+                  setState(() {});
+                },
                 contant: SearchAndOption(),
               ),
             ),
@@ -77,6 +86,7 @@ class _HomeState extends State<Home> {
                     details: recomanded[index]["details"],
                     imageCount: recomanded[index]["image"].length,
                     imagesForSlider: recomanded[index]["image"],
+                    onCartUpdated: onCartUpdated,
                   );
                 },
               ),
