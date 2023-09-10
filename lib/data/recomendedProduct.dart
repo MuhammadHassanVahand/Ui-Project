@@ -1,68 +1,68 @@
 List<Map> recomanded = [
   {
+    "name": "Oranges",
     "image": [
-      "https://www.verywellfit.com/thmb/qeIiD7JDWsOr4_Ymg4GCaxhhOZs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Bananas-5c6a36a346e0fb0001f0e4a3.jpg",
-      "https://www.daysoftheyear.com/cdn-cgi/image/dpr=1%2Cf=auto%2Cfit=cover%2Cheight=650%2Cq=40%2Csharpen=1%2Cwidth=956/wp-content/uploads/banana-day1-scaled.jpg"
+      "https://cdn.create.vista.com/api/media/small/1176895/stock-photo-oranges",
+      "https://www.tastingtable.com/img/gallery/the-science-behind-seedless-oranges/intro-1655473463.jpg"
     ],
-    "name": "Banana",
-    "type": "Organic",
-    "price": 100.0,
-    "details":
-        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo",
-  },
-  {
-    "image": [
-      "https://www.shutterstock.com/shutterstock/photos/106641707/display_1500/stock-photo-fresh-sweet-strawberry-isolated-on-white-106641707.jpg",
-      "https://images.pexels.com/photos/934055/pexels-photo-934055.jpeg?cs=srgb&dl=pexels-ylanite-koppens-934055.jpg&fm=jpg"
-    ],
-    "name": "StrawBerry",
-    "type": "Organic",
     "price": 150.0,
+    "type": "Citrus",
     "details":
-        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo",
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
+    "name": "Hamburger",
     "image": [
-      "https://thumbs.dreamstime.com/z/single-orange-fruit-isolated-white-background-168887021.jpg",
-      "https://images.pexels.com/photos/161559/background-bitter-breakfast-bright-161559.jpeg?cs=srgb&dl=pexels-pixabay-161559.jpg&fm=jpg"
+      "https://assets.epicurious.com/photos/57c5c6d9cf9e9ad43de2d96e/master/w_1000,h_684,c_limit/the-ultimate-hamburger.jpg",
+      "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg"
     ],
-    "name": "Orange",
-    "type": "Organic",
-    "price": 140.0,
+    "price": 350.0,
+    "type": "Burgers",
     "details":
-        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo",
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
+    "name": "Cheeseburger",
     "image": [
-      "https://images.bolt.eu/store/2023/2023-03-04/551635d3-9a07-49b8-ae30-970655c02697.jpeg",
-      "https://scitechdaily.com/images/Sliced-Watermelon.jpg"
+      "https://hips.hearstapps.com/hmg-prod/images/best-ever-burger-index-646e5ae887b2b.jpg?crop=0.566xw:1.00xh;0.210xw,0&resize=1200:*",
+      "https://www.foodandwine.com/thmb/DI29Houjc_ccAtFKly0BbVsusHc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/crispy-comte-cheesburgers-FT-RECIPE0921-6166c6552b7148e8a8561f7765ddf20b.jpg"
     ],
-    "name": "WaterMelon",
-    "type": "Organic",
-    "price": 50.0,
+    "price": 410.0,
+    "type": "Burgers",
     "details":
-        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo",
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
+    "name": "BBQ Burger",
     "image": [
-      "https://i.pinimg.com/550x/5e/6a/d2/5e6ad2894e8e474cd358b8bf5f75bceb.jpg",
-      "https://static.vecteezy.com/system/resources/thumbnails/023/290/773/small/fresh-red-apple-isolated-on-transparent-background-generative-ai-png.png"
+      "https://recipes.net/wp-content/uploads/2021/10/the-best-grilled-bbq-burger-recipe.jpg",
+      "https://frontporchpantry.com/cdn/shop/products/TexasBBQLoadedBurger_600x.jpg?v=1604145455"
     ],
-    "name": "Apple",
-    "type": "Organic",
-    "price": 200.0,
+    "price": 500.0,
+    "type": "Burgers",
     "details":
-        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo",
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
   {
+    "name": "Strawberries",
     "image": [
-      "https://5.imimg.com/data5/PX/CA/MY-38952691/fresh-grapes-500x500.jpg",
-      "https://images.pexels.com/photos/60021/grapes-wine-fruit-vines-60021.jpeg?cs=srgb&dl=pexels-pixabay-60021.jpg&fm=jpg"
+      "https://thumbs.dreamstime.com/b/three-strawberries-strawberry-leaf-white-background-114284301.jpg",
+      "https://www.liveeatlearn.com/wp-content/uploads/2016/07/strawberries-photo-vert.jpg"
     ],
-    "name": "Grapes",
-    "type": "Organic",
-    "price": 120.0,
+    "price": 190.0,
+    "type": "Berries",
     "details":
-        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo",
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
+  },
+  {
+    "name": "Raspberries",
+    "image": [
+      "https://cdn.britannica.com/83/156583-050-4A1FABB5/Red-raspberries.jpg",
+      "https://images.immediate.co.uk/production/volatile/sites/30/2023/07/Raspberries-02-4bc2ac6.jpg?quality=90&resize=440,400"
+    ],
+    "price": 280.0,
+    "type": "Berries",
+    "details":
+        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo"
   },
 ];

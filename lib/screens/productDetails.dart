@@ -55,23 +55,26 @@ class _ProductDetailsState extends State<ProductDetails> {
                 price: widget.price,
                 details: widget.details),
             Container(
-              child: Row(
-                children: [
-                  AppButton(
-                    backgroundColor: AppColors.black1,
-                    text: " Add to cart",
-                    textColor: AppColors.blue,
-                    width: MediaQuery.of(context).size.width * 0.49,
-                  ),
-                  const SizedBox(
-                    width: 2,
-                  ),
-                  AppButton(
-                    text: " Buy Now",
-                    textColor: AppColors.black1,
-                    width: MediaQuery.of(context).size.width * 0.49,
-                  ),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 2),
+                child: Row(
+                  children: [
+                    AppButton(
+                      backgroundColor: AppColors.black1,
+                      text: " Add to cart",
+                      textColor: AppColors.blue,
+                      width: MediaQuery.of(context).size.width * 0.49,
+                    ),
+                    const SizedBox(
+                      width: 2,
+                    ),
+                    AppButton(
+                      text: " Buy Now",
+                      textColor: AppColors.black1,
+                      width: MediaQuery.of(context).size.width * 0.49,
+                    ),
+                  ],
+                ),
               ),
             )
           ],

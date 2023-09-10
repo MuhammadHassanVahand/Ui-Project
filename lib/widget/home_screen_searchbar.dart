@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mini_ui_project/data/addToCart.dart';
+import 'package:mini_ui_project/data/addToFavourie.dart';
+import 'package:mini_ui_project/screens/favourite.dart';
 import 'package:mini_ui_project/screens/productDetails.dart';
 
 import '../constan/appColors.dart';
@@ -101,6 +104,7 @@ class HomeScreenGridItem extends StatefulWidget {
   final String details;
   final int imageCount;
   final List<String> imagesForSlider;
+
   const HomeScreenGridItem({
     super.key,
     required this.networkImage,
@@ -117,12 +121,15 @@ class HomeScreenGridItem extends StatefulWidget {
 }
 
 class _HomeScreenGridItemState extends State<HomeScreenGridItem> {
+  int quantity = 1;
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double imageHeight = screenWidth < 600 ? 95 : 200;
     double boxSize = screenWidth < 700 ? 2 : 30;
     double largeTextSize = screenWidth < 700 ? 20 : 30;
+    String itemKey = widget.productName;
+    bool itemExists = favourite.any((item) => item["name"] == itemKey);
 
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -153,22 +160,74 @@ class _HomeScreenGridItemState extends State<HomeScreenGridItem> {
               Container(
                 width: double.infinity,
                 height: 99,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
-                  child: Image.network(
-                    widget.networkImage,
-                    fit: BoxFit.fill,
-                  ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  image: DecorationImage(
+                      image: NetworkImage(
+                        widget.networkImage,
+                      ),
+                      fit: BoxFit.cover),
                 ),
               ),
               SizedBox(),
               Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  AppSmallText(
-                    text: widget.productName,
-                    color: AppColors.black100,
-                    size: 15,
+                  Wrap(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          AppSmallText(
+                            text: widget.productName,
+                            color: AppColors.black100,
+                            size: 15,
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          InkWell(
+                            onTap: () {
+                              setState(() {
+                                // String itemKey = widget.productName;
+
+                                // bool itemExists = favourite
+                                //     .any((item) => item["name"] == itemKey);
+
+                                if (itemExists) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                      content: Text("Remove from favourite"),
+                                    ),
+                                  );
+                                  favourite.removeWhere(
+                                    (element) => element["name"] == itemKey,
+                                  );
+                                } else {
+                                  Map<String, dynamic> fAdding = {
+                                    "name": widget.productName,
+                                    "type": widget.productType,
+                                    "price": widget.price,
+                                    "image": widget.imagesForSlider,
+                                    "details": widget.details,
+                                  };
+                                  favourite.add(fAdding);
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text("Item Added to Favourite!"),
+                                    ),
+                                  );
+                                }
+                              });
+                            },
+                            child: FaIcon(
+                              FontAwesomeIcons.solidHeart,
+                              color: itemExists ? Colors.pink : Colors.black,
+                              size: 19,
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
                   ),
                   AppSmallText(
                     text: widget.productType,
@@ -203,10 +262,49 @@ class _HomeScreenGridItemState extends State<HomeScreenGridItem> {
                                   ),
                                 ],
                               ),
-                              FaIcon(
-                                FontAwesomeIcons.circlePlus,
-                                color: AppColors.blue,
-                                size: 22,
+                              InkWell(
+                                onTap: () {
+                                  setState(
+                                    () {
+                                      String itemKey = widget.productName;
+
+                                      bool itemExists = addtoCart.any(
+                                          (item) => item["name"] == itemKey);
+
+                                      if (itemExists) {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          const SnackBar(
+                                            content:
+                                                Text("Already in the cart"),
+                                          ),
+                                        );
+                                      } else {
+                                        Map<String, dynamic> item = {
+                                          "name": widget.productName,
+                                          "image": widget.imagesForSlider,
+                                          "type": widget.productType,
+                                          "price": widget.price.toDouble(),
+                                          "details": widget.details,
+                                          "quantity": quantity
+                                        };
+                                        addtoCart.add(item);
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          const SnackBar(
+                                            content: Text(
+                                                "Added Successfully to cart"),
+                                          ),
+                                        );
+                                      }
+                                    },
+                                  );
+                                },
+                                child: FaIcon(
+                                  FontAwesomeIcons.circlePlus,
+                                  color: AppColors.blue,
+                                  size: 22,
+                                ),
                               )
                             ],
                           ),

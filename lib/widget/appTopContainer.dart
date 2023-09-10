@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mini_ui_project/constan/appColors.dart';
 import 'package:mini_ui_project/constan/appIcons.dart';
+import 'package:mini_ui_project/data/addToCart.dart';
 import 'package:mini_ui_project/screens/shoppingBag.dart';
 import 'package:mini_ui_project/widget/appLargeText.dart';
 import 'package:mini_ui_project/widget/appSmallText.dart';
 
-class TopContainer extends StatelessWidget {
+class TopContainer extends StatefulWidget {
   final Icon? backIcon;
   final String text;
   final Widget? contant;
@@ -14,8 +15,9 @@ class TopContainer extends StatelessWidget {
   final SvgPicture? svgPicture;
   final Color backgroundColor;
   final double? height;
+
   const TopContainer({
-    super.key,
+    Key? key,
     this.icon,
     this.contant,
     this.svgPicture,
@@ -23,8 +25,13 @@ class TopContainer extends StatelessWidget {
     this.backgroundColor = const Color(0xff2A4BA0),
     this.backIcon,
     this.height = 200,
-  });
+  }) : super(key: key);
 
+  @override
+  _TopContainerState createState() => _TopContainerState();
+}
+
+class _TopContainerState extends State<TopContainer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,49 +40,66 @@ class TopContainer extends StatelessWidget {
           Container(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             width: double.infinity,
-            height: height,
-            color: backgroundColor,
+            height: widget.height,
+            color: widget.backgroundColor,
             child: Column(children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  if (backIcon != null)
+                  if (widget.backIcon != null)
                     Container(
-                      child: backIcon,
+                      child: widget.backIcon,
                     ),
                   AppLargeText(
                     size: 22,
-                    text: text,
+                    text: widget.text,
                     color: AppColors.black1,
                   ),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        child: svgPicture,
+                        child: widget.svgPicture,
                       ),
                       SizedBox(
                         width: 10,
                       ),
                       InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ShoppingCart(),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ShoppingCart(),
+                            ),
+                          );
+                        },
+                        child: Stack(
+                          children: [
+                            AppIcons.bag,
+                            Positioned(
+                              top: 0,
+                              right: 0,
+                              child: CircleAvatar(
+                                backgroundColor: AppColors.yellow,
+                                radius: 7,
+                                child: Text(
+                                  "${addtoCart.length}",
+                                  style: TextStyle(fontSize: 10),
+                                ),
                               ),
-                            );
-                          },
-                          child: AppIcons.bag),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
-                  )
+                  ),
                 ],
               ),
               SizedBox(height: 18),
               Container(
-                child: contant,
-              )
+                child: widget.contant,
+              ),
             ]),
           ),
         ],
@@ -83,6 +107,98 @@ class TopContainer extends StatelessWidget {
     );
   }
 }
+
+// class TopContainer extends StatelessWidget {
+//   final Icon? backIcon;
+//   final String text;
+//   final Widget? contant;
+//   final Icon? icon;
+//   final SvgPicture? svgPicture;
+//   final Color backgroundColor;
+//   final double? height;
+//   const TopContainer({
+//     super.key,
+//     this.icon,
+//     this.contant,
+//     this.svgPicture,
+//     this.text = "Hey Halal",
+//     this.backgroundColor = const Color(0xff2A4BA0),
+//     this.backIcon,
+//     this.height = 200,
+//   });
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Column(
+//         children: [
+//           Container(
+//             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+//             width: double.infinity,
+//             height: height,
+//             color: backgroundColor,
+//             child: Column(children: [
+//               Row(
+//                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                 crossAxisAlignment: CrossAxisAlignment.start,
+//                 children: [
+//                   if (backIcon != null)
+//                     Container(
+//                       child: backIcon,
+//                     ),
+//                   AppLargeText(
+//                     size: 22,
+//                     text: text,
+//                     color: AppColors.black1,
+//                   ),
+//                   Row(
+//                     crossAxisAlignment: CrossAxisAlignment.start,
+//                     children: [
+//                       Container(
+//                         child: svgPicture,
+//                       ),
+//                       SizedBox(
+//                         width: 10,
+//                       ),
+//                       InkWell(
+//                           onTap: () {
+//                             Navigator.push(
+//                               context,
+//                               MaterialPageRoute(
+//                                 builder: (context) => ShoppingCart(),
+//                               ),
+//                             );
+//                           },
+//                           child: Stack(children: [
+//                             AppIcons.bag,
+//                             Positioned(
+//                               top: 0,
+//                               right: 0,
+//                               child: CircleAvatar(
+//                                 backgroundColor: AppColors.yellow,
+//                                 radius: 7,
+//                                 child: Text(
+//                                   "${addtoCart.length}",
+//                                   style: TextStyle(fontSize: 10),
+//                                 ),
+//                               ),
+//                             ),
+//                           ])),
+//                     ],
+//                   )
+//                 ],
+//               ),
+//               SizedBox(height: 18),
+//               Container(
+//                 child: contant,
+//               )
+//             ]),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
 
 class TopBar extends StatelessWidget {
   final SvgPicture? svgPicture;

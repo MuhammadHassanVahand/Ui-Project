@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List _screen = [
     Home(),
     Catedories(),
-    Favourite(),
+    FavouriteList(),
     MoreOptions(),
   ];
 
