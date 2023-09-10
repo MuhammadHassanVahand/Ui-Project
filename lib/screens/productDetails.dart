@@ -41,7 +41,9 @@ class _ProductDetailsState extends State<ProductDetails> {
       child: Scaffold(
         body: Column(
           children: [
-            TopBar(text: widget.itamName),
+            TopBar(
+              text: widget.itamName,
+            ),
             ImageSlider(
               imagesForSlider: widget.imagesForSlider,
               imageLength: widget.imageCount,

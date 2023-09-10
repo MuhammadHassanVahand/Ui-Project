@@ -79,7 +79,9 @@ class _FavouriteListState extends State<FavouriteList>
         child: Scaffold(
       body: Column(
         children: [
-          TopBar(text: "Favourite"),
+          TopBar(
+            text: "Favourite",
+          ),
           Expanded(
               child: ListView.builder(
             itemCount: favourite.length,
@@ -136,6 +138,7 @@ class _FavouriteListState extends State<FavouriteList>
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                         content: Text("Remove from favourite"),
+                                        duration: Duration(milliseconds: 600),
                                       ),
                                     );
                                   });

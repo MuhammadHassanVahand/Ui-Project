@@ -32,7 +32,9 @@ class _FruitsState extends State<Fruits> with SingleTickerProviderStateMixin {
       child: Scaffold(
         body: Column(
           children: [
-            TopBar(text: "Fruits"),
+            TopBar(
+              text: "Fruits",
+            ),
             TabBar(
               controller: _tabController,
               tabs: [

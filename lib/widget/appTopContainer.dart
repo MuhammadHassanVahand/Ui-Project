@@ -35,170 +35,81 @@ class _TopContainerState extends State<TopContainer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-            width: double.infinity,
-            height: widget.height,
-            color: widget.backgroundColor,
-            child: Column(children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  if (widget.backIcon != null)
-                    Container(
-                      child: widget.backIcon,
-                    ),
-                  AppLargeText(
-                    size: 22,
-                    text: widget.text,
-                    color: AppColors.black1,
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+      body: Builder(builder: (context) {
+        return Column(
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              width: double.infinity,
+              height: widget.height,
+              color: widget.backgroundColor,
+              child: Column(children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (widget.backIcon != null)
                       Container(
-                        child: widget.svgPicture,
+                        child: widget.backIcon,
                       ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ShoppingCart(),
-                            ),
-                          );
-                        },
-                        child: Stack(
-                          children: [
-                            AppIcons.bag,
-                            Positioned(
-                              top: 0,
-                              right: 0,
-                              child: CircleAvatar(
-                                backgroundColor: AppColors.yellow,
-                                radius: 7,
-                                child: Text(
-                                  "${addtoCart.length}",
-                                  style: TextStyle(fontSize: 10),
+                    AppLargeText(
+                      size: 22,
+                      text: widget.text,
+                      color: AppColors.black1,
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          child: widget.svgPicture,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        InkWell(
+                          onTap: () async {
+                            await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ShoppingCart(),
+                              ),
+                            );
+                            setState(() {});
+                          },
+                          child: Stack(
+                            children: [
+                              AppIcons.bag,
+                              Positioned(
+                                top: 0,
+                                right: 0,
+                                child: CircleAvatar(
+                                  backgroundColor: AppColors.yellow,
+                                  radius: 7,
+                                  child: Text(
+                                    "${addtoCart.length}",
+                                    style: TextStyle(fontSize: 10),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(height: 18),
-              Container(
-                child: widget.contant,
-              ),
-            ]),
-          ),
-        ],
-      ),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(height: 18),
+                Container(
+                  child: widget.contant,
+                ),
+              ]),
+            ),
+          ],
+        );
+      }),
     );
   }
 }
-
-// class TopContainer extends StatelessWidget {
-//   final Icon? backIcon;
-//   final String text;
-//   final Widget? contant;
-//   final Icon? icon;
-//   final SvgPicture? svgPicture;
-//   final Color backgroundColor;
-//   final double? height;
-//   const TopContainer({
-//     super.key,
-//     this.icon,
-//     this.contant,
-//     this.svgPicture,
-//     this.text = "Hey Halal",
-//     this.backgroundColor = const Color(0xff2A4BA0),
-//     this.backIcon,
-//     this.height = 200,
-//   });
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Column(
-//         children: [
-//           Container(
-//             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-//             width: double.infinity,
-//             height: height,
-//             color: backgroundColor,
-//             child: Column(children: [
-//               Row(
-//                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                 crossAxisAlignment: CrossAxisAlignment.start,
-//                 children: [
-//                   if (backIcon != null)
-//                     Container(
-//                       child: backIcon,
-//                     ),
-//                   AppLargeText(
-//                     size: 22,
-//                     text: text,
-//                     color: AppColors.black1,
-//                   ),
-//                   Row(
-//                     crossAxisAlignment: CrossAxisAlignment.start,
-//                     children: [
-//                       Container(
-//                         child: svgPicture,
-//                       ),
-//                       SizedBox(
-//                         width: 10,
-//                       ),
-//                       InkWell(
-//                           onTap: () {
-//                             Navigator.push(
-//                               context,
-//                               MaterialPageRoute(
-//                                 builder: (context) => ShoppingCart(),
-//                               ),
-//                             );
-//                           },
-//                           child: Stack(children: [
-//                             AppIcons.bag,
-//                             Positioned(
-//                               top: 0,
-//                               right: 0,
-//                               child: CircleAvatar(
-//                                 backgroundColor: AppColors.yellow,
-//                                 radius: 7,
-//                                 child: Text(
-//                                   "${addtoCart.length}",
-//                                   style: TextStyle(fontSize: 10),
-//                                 ),
-//                               ),
-//                             ),
-//                           ])),
-//                     ],
-//                   )
-//                 ],
-//               ),
-//               SizedBox(height: 18),
-//               Container(
-//                 child: contant,
-//               )
-//             ]),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
 
 class TopBar extends StatelessWidget {
   final SvgPicture? svgPicture;
@@ -243,7 +154,23 @@ class TopBar extends StatelessWidget {
                       ),
                     );
                   },
-                  child: AppIcons.bag_Black),
+                  child: Stack(
+                    children: [
+                      AppIcons.bag_Black,
+                      Positioned(
+                        top: 0,
+                        right: 0,
+                        child: CircleAvatar(
+                          backgroundColor: AppColors.yellow,
+                          radius: 7,
+                          child: Text(
+                            "${addtoCart.length}",
+                            style: const TextStyle(fontSize: 10),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )),
             ],
           )
         ],

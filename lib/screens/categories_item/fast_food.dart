@@ -33,7 +33,9 @@ class _FastFoodState extends State<FastFood>
       child: Scaffold(
         body: Column(
           children: [
-            TopBar(text: "Fast Food"),
+            TopBar(
+              text: "Fast Food",
+            ),
             TabBar(
               controller: _tabController,
               tabs: [

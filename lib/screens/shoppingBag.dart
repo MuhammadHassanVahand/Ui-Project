@@ -125,6 +125,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                         content: Text("Remove Successfully"),
+                                        duration: Duration(milliseconds: 600),
                                       ),
                                     );
                                     _calculatePrices();

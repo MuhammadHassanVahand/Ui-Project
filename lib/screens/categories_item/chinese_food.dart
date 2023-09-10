@@ -33,7 +33,9 @@ class _ChineseFoodState extends State<ChineseFood>
       child: Scaffold(
         body: Column(
           children: [
-            TopBar(text: "Chinese Food"),
+            TopBar(
+              text: "Chinese Food",
+            ),
             TabBar(
               controller: _tabController,
               tabs: [

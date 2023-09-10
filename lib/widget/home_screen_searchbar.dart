@@ -188,15 +188,11 @@ class _HomeScreenGridItemState extends State<HomeScreenGridItem> {
                           InkWell(
                             onTap: () {
                               setState(() {
-                                // String itemKey = widget.productName;
-
-                                // bool itemExists = favourite
-                                //     .any((item) => item["name"] == itemKey);
-
                                 if (itemExists) {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
                                       content: Text("Remove from favourite"),
+                                      duration: Duration(milliseconds: 600),
                                     ),
                                   );
                                   favourite.removeWhere(
@@ -214,6 +210,7 @@ class _HomeScreenGridItemState extends State<HomeScreenGridItem> {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
                                       content: Text("Item Added to Favourite!"),
+                                      duration: Duration(milliseconds: 600),
                                     ),
                                   );
                                 }
@@ -277,6 +274,8 @@ class _HomeScreenGridItemState extends State<HomeScreenGridItem> {
                                           const SnackBar(
                                             content:
                                                 Text("Already in the cart"),
+                                            duration:
+                                                Duration(milliseconds: 600),
                                           ),
                                         );
                                       } else {
@@ -294,8 +293,11 @@ class _HomeScreenGridItemState extends State<HomeScreenGridItem> {
                                           const SnackBar(
                                             content: Text(
                                                 "Added Successfully to cart"),
+                                            duration:
+                                                Duration(milliseconds: 600),
                                           ),
                                         );
+                                        setState(() {});
                                       }
                                     },
                                   );

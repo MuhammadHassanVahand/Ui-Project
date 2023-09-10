@@ -33,7 +33,9 @@ class _VegetablesState extends State<Vegetables>
       child: Scaffold(
         body: Column(
           children: [
-            TopBar(text: "Vegetables"),
+            TopBar(
+              text: "Vegetables",
+            ),
             TabBar(
               controller: _tabController,
               tabs: const [

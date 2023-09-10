@@ -34,7 +34,7 @@ class _HomeState extends State<Home> {
               width: double.infinity,
               height: 200,
               color: AppColors.blue,
-              child: TopContainer(
+              child: const TopContainer(
                 contant: SearchAndOption(),
               ),
             ),
