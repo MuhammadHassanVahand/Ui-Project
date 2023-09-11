@@ -113,11 +113,18 @@ class _TopContainerState extends State<TopContainer> {
   }
 }
 
-class TopBar extends StatelessWidget {
+class TopBar extends StatefulWidget {
   final SvgPicture? svgPicture;
+  final Function? ontopUpdated;
   final String text;
-  const TopBar({super.key, this.svgPicture, required this.text});
+  const TopBar(
+      {super.key, this.svgPicture, this.ontopUpdated, required this.text});
 
+  @override
+  State<TopBar> createState() => _TopBarState();
+}
+
+class _TopBarState extends State<TopBar> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -137,7 +144,7 @@ class TopBar extends StatelessWidget {
                 width: 40,
               ),
               AppSmallText(
-                text: text,
+                text: widget.text,
                 color: AppColors.black100,
                 size: 20,
               ),
@@ -146,15 +153,16 @@ class TopBar extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(child: svgPicture),
+              Container(child: widget.svgPicture),
               InkWell(
-                  onTap: () {
-                    Navigator.push(
+                  onTap: () async {
+                    await Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => ShoppingCart(),
                       ),
                     );
+                    setState(() {});
                   },
                   child: Stack(
                     children: [
@@ -180,87 +188,3 @@ class TopBar extends StatelessWidget {
     );
   }
 }
-
-
-
-
-// Padding(
-//                     padding: const EdgeInsets.symmetric(horizontal: 20),
-//                     child: TextField(
-//                       style: TextStyle(color: AppColors.black1),
-//                       decoration: InputDecoration(
-//                         hintText: "Search Products or Store",
-//                         hintStyle: TextStyle(color: AppColors.black45),
-//                         prefixIconColor: AppColors.black1,
-//                         border: OutlineInputBorder(
-//                           borderRadius: BorderRadius.circular(100),
-//                         ),
-//                         fillColor: AppColors.darkBlue,
-//                         filled: true,
-//                         prefixIcon: AppIcons.search,
-//                       ),
-//                     ),
-//                   ),
-//                   SizedBox(
-//                     height: 8,
-//                   ),
-//                   Padding(
-//                     padding: EdgeInsets.symmetric(horizontal: 15),
-//                     child: Row(
-//                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                       children: [
-//                         Container(
-//                           width: 200,
-//                           height: 45,
-//                           child: Column(
-//                             crossAxisAlignment: CrossAxisAlignment.start,
-//                             children: [
-//                               AppSmallText(
-//                                 text: "Delivery To",
-//                                 color: AppColors.black45,
-//                               ),
-//                               Row(
-//                                 children: [
-//                                   AppLargeText(
-//                                     text: "Green Way 3000,Sylhet",
-//                                     color: AppColors.black10,
-//                                     size: 14,
-//                                   ),
-//                                   Icon(
-//                                     Icons.arrow_drop_down,
-//                                     color: AppColors.black1,
-//                                   )
-//                                 ],
-//                               ),
-//                             ],
-//                           ),
-//                         ),
-//                         Container(
-//                           width: 100,
-//                           height: 45,
-//                           child: Column(
-//                             crossAxisAlignment: CrossAxisAlignment.start,
-//                             children: [
-//                               AppSmallText(
-//                                 text: "WITHIN",
-//                                 color: AppColors.black45,
-//                               ),
-//                               Row(
-//                                 children: [
-//                                   AppLargeText(
-//                                     text: "1 HOUR",
-//                                     color: AppColors.black1,
-//                                     size: 14,
-//                                   ),
-//                                   Icon(
-//                                     Icons.arrow_drop_down,
-//                                     color: AppColors.black1,
-//                                   )
-//                                 ],
-//                               )
-//                             ],
-//                           ),
-//                         )
-//                       ],
-//                     ),
-//                   )

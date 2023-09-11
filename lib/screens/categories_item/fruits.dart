@@ -14,6 +14,10 @@ class Fruits extends StatefulWidget {
 class _FruitsState extends State<Fruits> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
+  void ontoptUpdated() {
+    setState(() {});
+  }
+
   @override
   void initState() {
     _tabController = TabController(length: 3, vsync: this);
@@ -33,6 +37,9 @@ class _FruitsState extends State<Fruits> with SingleTickerProviderStateMixin {
         body: Column(
           children: [
             TopBar(
+              ontopUpdated: () {
+                setState(() {});
+              },
               text: "Fruits",
             ),
             TabBar(
@@ -59,9 +66,9 @@ class _FruitsState extends State<Fruits> with SingleTickerProviderStateMixin {
               child: TabBarView(
                 controller: _tabController,
                 children: [
-                  CitrusFruits(),
-                  Berries(),
-                  TropicalFruits(),
+                  CitrusFruits(ontopUpdated: ontoptUpdated),
+                  Berries(ontopUpdated: ontoptUpdated),
+                  TropicalFruits(ontopUpdated: ontoptUpdated),
                 ],
               ),
             ),
@@ -73,7 +80,8 @@ class _FruitsState extends State<Fruits> with SingleTickerProviderStateMixin {
 }
 
 class CitrusFruits extends StatefulWidget {
-  const CitrusFruits({super.key});
+  final Function? ontopUpdated;
+  const CitrusFruits({super.key, this.ontopUpdated});
 
   @override
   State<CitrusFruits> createState() => _CitrusFruitsState();
@@ -95,6 +103,7 @@ class _CitrusFruitsState extends State<CitrusFruits> {
           details: citrusFruits[index]["details"],
           imageCount: citrusFruits[index]["image"].length,
           imagesForSlider: citrusFruits[index]["image"],
+          ontopUpdated: widget.ontopUpdated,
         );
       },
     );
@@ -102,7 +111,8 @@ class _CitrusFruitsState extends State<CitrusFruits> {
 }
 
 class Berries extends StatefulWidget {
-  const Berries({super.key});
+  final Function? ontopUpdated;
+  const Berries({super.key, this.ontopUpdated});
 
   @override
   State<Berries> createState() => _BerriesState();
@@ -124,6 +134,7 @@ class _BerriesState extends State<Berries> {
           details: berries[index]["details"],
           imageCount: berries[index]["image"].length,
           imagesForSlider: berries[index]["image"],
+          ontopUpdated: widget.ontopUpdated,
         );
       },
     );
@@ -131,7 +142,8 @@ class _BerriesState extends State<Berries> {
 }
 
 class TropicalFruits extends StatefulWidget {
-  const TropicalFruits({super.key});
+  final Function? ontopUpdated;
+  const TropicalFruits({super.key, this.ontopUpdated});
 
   @override
   State<TropicalFruits> createState() => _TropicalFruitsState();
@@ -153,6 +165,7 @@ class _TropicalFruitsState extends State<TropicalFruits> {
           details: tropicalFruits[index]["details"],
           imageCount: tropicalFruits[index]["image"].length,
           imagesForSlider: tropicalFruits[index]["image"],
+          ontopUpdated: widget.ontopUpdated,
         );
       },
     );

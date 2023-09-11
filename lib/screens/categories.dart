@@ -66,13 +66,14 @@ class _CatedoriesState extends State<Catedories> {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: InkWell(
-                      onTap: () {
-                        Navigator.push(
+                      onTap: () async {
+                        await Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) => category[index]["subtype"],
                           ),
                         );
+                        setState(() {});
                       },
                       child: Container(
                         width: 200,

@@ -14,6 +14,9 @@ class SingaporeFood extends StatefulWidget {
 class _SingaporeFoodState extends State<SingaporeFood>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  void ontoptUpdated() {
+    setState(() {});
+  }
 
   @override
   void initState() {
@@ -34,6 +37,9 @@ class _SingaporeFoodState extends State<SingaporeFood>
         body: Column(
           children: [
             TopBar(
+              ontopUpdated: () {
+                setState(() {});
+              },
               text: "Singapore Food",
             ),
             TabBar(
@@ -59,9 +65,9 @@ class _SingaporeFoodState extends State<SingaporeFood>
               child: TabBarView(
                 controller: _tabController,
                 children: [
-                  HawkerCenterDelights(),
-                  SeafoodSpecialties(),
-                  DessertsandSweets(),
+                  HawkerCenterDelights(ontopUpdated: ontoptUpdated),
+                  SeafoodSpecialties(ontopUpdated: ontoptUpdated),
+                  DessertsandSweets(ontopUpdated: ontoptUpdated),
                 ],
               ),
             ),
@@ -73,7 +79,8 @@ class _SingaporeFoodState extends State<SingaporeFood>
 }
 
 class HawkerCenterDelights extends StatefulWidget {
-  const HawkerCenterDelights({super.key});
+  final Function? ontopUpdated;
+  const HawkerCenterDelights({super.key, this.ontopUpdated});
 
   @override
   State<HawkerCenterDelights> createState() => _HawkerCenterDelightsState();
@@ -95,6 +102,7 @@ class _HawkerCenterDelightsState extends State<HawkerCenterDelights> {
           details: hawkerCenterDelights[index]["details"],
           imageCount: hawkerCenterDelights[index]["image"].length,
           imagesForSlider: hawkerCenterDelights[index]["image"],
+          ontopUpdated: widget.ontopUpdated,
         );
       },
     );
@@ -102,7 +110,8 @@ class _HawkerCenterDelightsState extends State<HawkerCenterDelights> {
 }
 
 class SeafoodSpecialties extends StatefulWidget {
-  const SeafoodSpecialties({super.key});
+  final Function? ontopUpdated;
+  const SeafoodSpecialties({super.key, this.ontopUpdated});
 
   @override
   State<SeafoodSpecialties> createState() => _SeafoodSpecialtiesState();
@@ -124,6 +133,7 @@ class _SeafoodSpecialtiesState extends State<SeafoodSpecialties> {
           details: seafoodSpecialties[index]["details"],
           imageCount: seafoodSpecialties[index]["image"].length,
           imagesForSlider: seafoodSpecialties[index]["image"],
+          ontopUpdated: widget.ontopUpdated,
         );
       },
     );
@@ -131,7 +141,8 @@ class _SeafoodSpecialtiesState extends State<SeafoodSpecialties> {
 }
 
 class DessertsandSweets extends StatefulWidget {
-  const DessertsandSweets({super.key});
+  final Function? ontopUpdated;
+  const DessertsandSweets({super.key, this.ontopUpdated});
 
   @override
   State<DessertsandSweets> createState() => _DessertsandSweetsState();
@@ -153,6 +164,7 @@ class _DessertsandSweetsState extends State<DessertsandSweets> {
           details: dessertsandSweets[index]["details"],
           imageCount: dessertsandSweets[index]["image"].length,
           imagesForSlider: dessertsandSweets[index]["image"],
+          ontopUpdated: widget.ontopUpdated,
         );
       },
     );

@@ -14,6 +14,9 @@ class Vegetables extends StatefulWidget {
 class _VegetablesState extends State<Vegetables>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  void ontoptUpdated() {
+    setState(() {});
+  }
 
   @override
   void initState() {
@@ -34,6 +37,9 @@ class _VegetablesState extends State<Vegetables>
         body: Column(
           children: [
             TopBar(
+              ontopUpdated: () {
+                setState(() {});
+              },
               text: "Vegetables",
             ),
             TabBar(
@@ -57,10 +63,10 @@ class _VegetablesState extends State<Vegetables>
               ),
             ),
             Expanded(
-                child: TabBarView(controller: _tabController, children: const [
-              LeafyGreens(),
-              RootVegetables(),
-              CruciferousVegetables(),
+                child: TabBarView(controller: _tabController, children: [
+              LeafyGreens(ontopUpdated: ontoptUpdated),
+              RootVegetables(ontopUpdated: ontoptUpdated),
+              CruciferousVegetables(ontopUpdated: ontoptUpdated),
             ]))
           ],
         ),
@@ -70,7 +76,8 @@ class _VegetablesState extends State<Vegetables>
 }
 
 class LeafyGreens extends StatefulWidget {
-  const LeafyGreens({super.key});
+  final Function? ontopUpdated;
+  const LeafyGreens({super.key, this.ontopUpdated});
 
   @override
   State<LeafyGreens> createState() => _LeafyGreensState();
@@ -92,6 +99,7 @@ class _LeafyGreensState extends State<LeafyGreens> {
           details: leafyGreens[index]["details"],
           imageCount: leafyGreens[index]["image"].length,
           imagesForSlider: leafyGreens[index]["image"],
+          ontopUpdated: widget.ontopUpdated,
         );
       },
     );
@@ -99,7 +107,8 @@ class _LeafyGreensState extends State<LeafyGreens> {
 }
 
 class RootVegetables extends StatefulWidget {
-  const RootVegetables({super.key});
+  final Function? ontopUpdated;
+  const RootVegetables({super.key, this.ontopUpdated});
 
   @override
   State<RootVegetables> createState() => _RootVegetablesState();
@@ -121,6 +130,7 @@ class _RootVegetablesState extends State<RootVegetables> {
           details: rootVegetables[index]["details"],
           imageCount: rootVegetables[index]["image"].length,
           imagesForSlider: rootVegetables[index]["image"],
+          ontopUpdated: widget.ontopUpdated,
         );
       },
     );
@@ -128,7 +138,8 @@ class _RootVegetablesState extends State<RootVegetables> {
 }
 
 class CruciferousVegetables extends StatefulWidget {
-  const CruciferousVegetables({super.key});
+  final Function? ontopUpdated;
+  const CruciferousVegetables({super.key, this.ontopUpdated});
 
   @override
   State<CruciferousVegetables> createState() => _CruciferousVegetablesState();
@@ -150,6 +161,7 @@ class _CruciferousVegetablesState extends State<CruciferousVegetables> {
           details: cruciferousVegetables[index]["details"],
           imageCount: cruciferousVegetables[index]["image"].length,
           imagesForSlider: cruciferousVegetables[index]["image"],
+          ontopUpdated: widget.ontopUpdated,
         );
       },
     );

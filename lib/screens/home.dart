@@ -47,7 +47,7 @@ class _HomeState extends State<Home> {
                 contant: SearchAndOption(),
               ),
             ),
-            SingleChildScrollView(
+            const SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,7 +59,7 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
             Padding(
@@ -72,7 +72,7 @@ class _HomeState extends State<Home> {
             ),
             Expanded(
               child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 263,
                     crossAxisSpacing: 2,
                     mainAxisSpacing: 2),

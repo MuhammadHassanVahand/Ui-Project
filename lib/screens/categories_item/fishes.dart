@@ -13,6 +13,9 @@ class Fishes extends StatefulWidget {
 
 class _FishesState extends State<Fishes> with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  void ontoptUpdated() {
+    setState(() {});
+  }
 
   @override
   void initState() {
@@ -33,6 +36,9 @@ class _FishesState extends State<Fishes> with SingleTickerProviderStateMixin {
         body: Column(
           children: [
             TopBar(
+              ontopUpdated: () {
+                setState(() {});
+              },
               text: "Sea Food",
             ),
             TabBar(
@@ -58,9 +64,9 @@ class _FishesState extends State<Fishes> with SingleTickerProviderStateMixin {
               child: TabBarView(
                 controller: _tabController,
                 children: [
-                  Finfish(),
-                  Shellfish(),
-                  Mollusks(),
+                  Finfish(ontopUpdated: ontoptUpdated),
+                  Shellfish(ontopUpdated: ontoptUpdated),
+                  Mollusks(ontopUpdated: ontoptUpdated),
                 ],
               ),
             ),
@@ -72,7 +78,8 @@ class _FishesState extends State<Fishes> with SingleTickerProviderStateMixin {
 }
 
 class Finfish extends StatefulWidget {
-  const Finfish({super.key});
+  final Function? ontopUpdated;
+  const Finfish({super.key, this.ontopUpdated});
 
   @override
   State<Finfish> createState() => _FinfishState();
@@ -94,6 +101,7 @@ class _FinfishState extends State<Finfish> {
           details: finfish[index]["details"],
           imageCount: finfish[index]["image"].length,
           imagesForSlider: finfish[index]["image"],
+          ontopUpdated: widget.ontopUpdated,
         );
       },
     );
@@ -101,7 +109,8 @@ class _FinfishState extends State<Finfish> {
 }
 
 class Shellfish extends StatefulWidget {
-  const Shellfish({super.key});
+  final Function? ontopUpdated;
+  const Shellfish({super.key, this.ontopUpdated});
 
   @override
   State<Shellfish> createState() => _ShellfishState();
@@ -123,6 +132,7 @@ class _ShellfishState extends State<Shellfish> {
           details: shellfish[index]["details"],
           imageCount: shellfish[index]["image"].length,
           imagesForSlider: shellfish[index]["image"],
+          ontopUpdated: widget.ontopUpdated,
         );
       },
     );
@@ -130,7 +140,8 @@ class _ShellfishState extends State<Shellfish> {
 }
 
 class Mollusks extends StatefulWidget {
-  const Mollusks({super.key});
+  final Function? ontopUpdated;
+  const Mollusks({super.key, this.ontopUpdated});
 
   @override
   State<Mollusks> createState() => _MollusksState();
@@ -152,6 +163,7 @@ class _MollusksState extends State<Mollusks> {
           details: mollusks[index]["details"],
           imageCount: mollusks[index]["image"].length,
           imagesForSlider: mollusks[index]["image"],
+          ontopUpdated: widget.ontopUpdated,
         );
       },
     );

@@ -14,6 +14,9 @@ class FastFood extends StatefulWidget {
 class _FastFoodState extends State<FastFood>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  void ontoptUpdated() {
+    setState(() {});
+  }
 
   @override
   void initState() {
@@ -34,6 +37,9 @@ class _FastFoodState extends State<FastFood>
         body: Column(
           children: [
             TopBar(
+              ontopUpdated: () {
+                setState(() {});
+              },
               text: "Fast Food",
             ),
             TabBar(
@@ -59,9 +65,9 @@ class _FastFoodState extends State<FastFood>
               child: TabBarView(
                 controller: _tabController,
                 children: [
-                  Burgers(),
-                  Pizza(),
-                  FriedChicken(),
+                  Burgers(ontopUpdated: ontoptUpdated),
+                  Pizza(ontopUpdated: ontoptUpdated),
+                  FriedChicken(ontopUpdated: ontoptUpdated),
                 ],
               ),
             ),
@@ -73,7 +79,8 @@ class _FastFoodState extends State<FastFood>
 }
 
 class Burgers extends StatefulWidget {
-  const Burgers({super.key});
+  final Function? ontopUpdated;
+  const Burgers({super.key, this.ontopUpdated});
 
   @override
   State<Burgers> createState() => _BurgersState();
@@ -95,6 +102,7 @@ class _BurgersState extends State<Burgers> {
           details: burgers[index]["details"],
           imageCount: burgers[index]["image"].length,
           imagesForSlider: burgers[index]["image"],
+          ontopUpdated: widget.ontopUpdated,
         );
       },
     );
@@ -102,7 +110,8 @@ class _BurgersState extends State<Burgers> {
 }
 
 class Pizza extends StatefulWidget {
-  const Pizza({super.key});
+  final Function? ontopUpdated;
+  const Pizza({super.key, this.ontopUpdated});
 
   @override
   State<Pizza> createState() => _PizzaState();
@@ -124,6 +133,7 @@ class _PizzaState extends State<Pizza> {
           details: pizza[index]["details"],
           imageCount: pizza[index]["image"].length,
           imagesForSlider: pizza[index]["image"],
+          ontopUpdated: widget.ontopUpdated,
         );
       },
     );
@@ -131,7 +141,8 @@ class _PizzaState extends State<Pizza> {
 }
 
 class FriedChicken extends StatefulWidget {
-  const FriedChicken({super.key});
+  final Function? ontopUpdated;
+  const FriedChicken({super.key, this.ontopUpdated});
 
   @override
   State<FriedChicken> createState() => _FriedChickenState();
@@ -153,6 +164,7 @@ class _FriedChickenState extends State<FriedChicken> {
           details: friedChicken[index]["details"],
           imageCount: friedChicken[index]["image"].length,
           imagesForSlider: friedChicken[index]["image"],
+          ontopUpdated: widget.ontopUpdated,
         );
       },
     );

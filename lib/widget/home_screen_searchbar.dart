@@ -106,6 +106,7 @@ class HomeScreenGridItem extends StatefulWidget {
   final int imageCount;
   final List<String> imagesForSlider;
   final Function? onCartUpdated;
+  final Function? ontopUpdated;
 
   const HomeScreenGridItem({
     super.key,
@@ -117,6 +118,7 @@ class HomeScreenGridItem extends StatefulWidget {
     required this.imageCount,
     required this.imagesForSlider,
     this.onCartUpdated,
+    this.ontopUpdated,
   });
 
   @override
@@ -153,7 +155,7 @@ class _HomeScreenGridItemState extends State<HomeScreenGridItem> {
                   image: widget.networkImage,
                   imageCount: widget.imageCount,
                   details: widget.details,
-                  imagesForSlider: widget.imagesForSlider!,
+                  imagesForSlider: widget.imagesForSlider,
                 ),
               ),
             );
@@ -183,7 +185,7 @@ class _HomeScreenGridItemState extends State<HomeScreenGridItem> {
                           AppSmallText(
                             text: widget.productName,
                             color: AppColors.black100,
-                            size: 15,
+                            size: 12,
                           ),
                           SizedBox(
                             width: 8,
@@ -300,6 +302,7 @@ class _HomeScreenGridItemState extends State<HomeScreenGridItem> {
                                                 Duration(milliseconds: 600),
                                           ),
                                         );
+                                        widget.ontopUpdated?.call();
                                         widget.onCartUpdated?.call();
                                       }
                                     },

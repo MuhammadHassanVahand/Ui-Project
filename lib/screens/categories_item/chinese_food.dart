@@ -14,6 +14,9 @@ class ChineseFood extends StatefulWidget {
 class _ChineseFoodState extends State<ChineseFood>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  void ontoptUpdated() {
+    setState(() {});
+  }
 
   @override
   void initState() {
@@ -34,6 +37,9 @@ class _ChineseFoodState extends State<ChineseFood>
         body: Column(
           children: [
             TopBar(
+              ontopUpdated: () {
+                setState(() {});
+              },
               text: "Chinese Food",
             ),
             TabBar(
@@ -60,9 +66,13 @@ class _ChineseFoodState extends State<ChineseFood>
               child: TabBarView(
                 controller: _tabController,
                 children: [
-                  DimSum(),
-                  SichuanCuisine(),
-                  CantoneseCuisine(),
+                  DimSum(ontopUpdated: ontoptUpdated),
+                  SichuanCuisine(
+                    ontopUpdated: ontoptUpdated,
+                  ),
+                  CantoneseCuisine(
+                    ontopUpdated: ontoptUpdated,
+                  ),
                 ],
               ),
             ),
@@ -74,7 +84,8 @@ class _ChineseFoodState extends State<ChineseFood>
 }
 
 class DimSum extends StatefulWidget {
-  const DimSum({super.key});
+  final Function? ontopUpdated;
+  const DimSum({super.key, this.ontopUpdated});
 
   @override
   State<DimSum> createState() => _DimSumState();
@@ -96,6 +107,7 @@ class _DimSumState extends State<DimSum> {
           details: dimSum[index]["details"],
           imageCount: dimSum[index]["image"].length,
           imagesForSlider: dimSum[index]["image"],
+          ontopUpdated: widget.ontopUpdated,
         );
       },
     );
@@ -103,7 +115,8 @@ class _DimSumState extends State<DimSum> {
 }
 
 class SichuanCuisine extends StatefulWidget {
-  const SichuanCuisine({super.key});
+  final Function? ontopUpdated;
+  const SichuanCuisine({super.key, this.ontopUpdated});
 
   @override
   State<SichuanCuisine> createState() => _SichuanCuisineState();
@@ -125,6 +138,7 @@ class _SichuanCuisineState extends State<SichuanCuisine> {
           details: sichuanCuisine[index]["details"],
           imageCount: sichuanCuisine[index]["image"].length,
           imagesForSlider: sichuanCuisine[index]["image"],
+          ontopUpdated: widget.ontopUpdated,
         );
       },
     );
@@ -132,7 +146,8 @@ class _SichuanCuisineState extends State<SichuanCuisine> {
 }
 
 class CantoneseCuisine extends StatefulWidget {
-  const CantoneseCuisine({super.key});
+  final Function? ontopUpdated;
+  const CantoneseCuisine({super.key, this.ontopUpdated});
 
   @override
   State<CantoneseCuisine> createState() => _CantoneseCuisineState();
@@ -154,6 +169,7 @@ class _CantoneseCuisineState extends State<CantoneseCuisine> {
           details: cantoneseCuisine[index]["details"],
           imageCount: cantoneseCuisine[index]["image"].length,
           imagesForSlider: cantoneseCuisine[index]["image"],
+          ontopUpdated: widget.ontopUpdated,
         );
       },
     );
