@@ -138,7 +138,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                             size: 15,
                           ),
                           subtitle: AppSmallText(
-                            text: "${addtoCart[index]["price"] - 30}",
+                            text: "Rs.${addtoCart[index]["price"] - 30}",
                             color: AppColors.black90,
                             size: 17,
                           ),

@@ -45,7 +45,7 @@ class _ItemTotalPricesState extends State<ItemTotalPrices> {
                     color: AppColors.black60,
                   ),
                   AppLargeText(
-                    text: "${widget.subtotal}",
+                    text: "Rs.${widget.subtotal}",
                     color: AppColors.black90,
                     size: 15,
                   )
@@ -63,7 +63,7 @@ class _ItemTotalPricesState extends State<ItemTotalPrices> {
                     color: AppColors.black60,
                   ),
                   AppLargeText(
-                    text: "${widget.delivery}",
+                    text: "Rs.${widget.delivery}",
                     color: AppColors.black90,
                     size: 15,
                   )
@@ -81,7 +81,7 @@ class _ItemTotalPricesState extends State<ItemTotalPrices> {
                     color: AppColors.black60,
                   ),
                   AppLargeText(
-                    text: "${widget.total}",
+                    text: "Rs.${widget.total}",
                     color: AppColors.black90,
                     size: 15,
                   )
