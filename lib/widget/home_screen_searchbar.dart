@@ -144,8 +144,8 @@ class _HomeScreenGridItemState extends State<HomeScreenGridItem> {
           color: AppColors.black20,
         ),
         child: GestureDetector(
-          onTap: () {
-            Navigator.push(
+          onTap: () async {
+            await Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => ProductDetails(

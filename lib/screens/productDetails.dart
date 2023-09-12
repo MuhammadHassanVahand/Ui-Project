@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mini_ui_project/constan/appButton.dart';
 import 'package:mini_ui_project/constan/appColors.dart';
 import 'package:mini_ui_project/constan/appIcons.dart';
+import 'package:mini_ui_project/data/addToCart.dart';
 import 'package:mini_ui_project/data/recomendedProduct.dart';
 import 'package:mini_ui_project/widget/appLargeText.dart';
 import 'package:mini_ui_project/widget/appSmallText.dart';
@@ -35,6 +36,10 @@ class ProductDetails extends StatefulWidget {
 }
 
 class _ProductDetailsState extends State<ProductDetails> {
+  void ontoptUpdated() {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -42,6 +47,9 @@ class _ProductDetailsState extends State<ProductDetails> {
         body: Column(
           children: [
             TopBar(
+              ontopUpdated: () {
+                setState(() {});
+              },
               text: widget.itamName,
             ),
             ImageSlider(
@@ -53,32 +61,13 @@ class _ProductDetailsState extends State<ProductDetails> {
               height: 2,
             ),
             ItemDetails(
-                catchPhrase: widget.catchPhrase,
-                price: widget.price,
-                details: widget.details),
-            Container(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 2),
-                child: Row(
-                  children: [
-                    AppButton(
-                      backgroundColor: AppColors.black1,
-                      text: " Add to cart",
-                      textColor: AppColors.blue,
-                      width: MediaQuery.of(context).size.width * 0.49,
-                    ),
-                    const SizedBox(
-                      width: 2,
-                    ),
-                    AppButton(
-                      text: " Buy Now",
-                      textColor: AppColors.black1,
-                      width: MediaQuery.of(context).size.width * 0.49,
-                    ),
-                  ],
-                ),
-              ),
-            )
+              catchPhrase: widget.catchPhrase,
+              price: widget.price,
+              details: widget.details,
+              itemName: widget.itamName,
+              image: widget.image,
+              ontopUpdated: ontoptUpdated,
+            ),
           ],
         ),
       ),

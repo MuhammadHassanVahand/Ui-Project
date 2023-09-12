@@ -9,7 +9,7 @@ import 'package:mini_ui_project/widget/appSmallText.dart';
 
 class TopContainer extends StatefulWidget {
   final Icon? backIcon;
-  final String text;
+  final String? text;
   final Widget? contant;
   final Icon? icon;
   final SvgPicture? svgPicture;
@@ -56,7 +56,7 @@ class _TopContainerState extends State<TopContainer> {
                       ),
                     AppLargeText(
                       size: 22,
-                      text: widget.text,
+                      text: widget.text!,
                       color: AppColors.black1,
                     ),
                     Row(
@@ -116,9 +116,8 @@ class _TopContainerState extends State<TopContainer> {
 class TopBar extends StatefulWidget {
   final SvgPicture? svgPicture;
   final Function? ontopUpdated;
-  final String text;
-  const TopBar(
-      {super.key, this.svgPicture, this.ontopUpdated, required this.text});
+  final String? text;
+  const TopBar({super.key, this.svgPicture, this.ontopUpdated, this.text});
 
   @override
   State<TopBar> createState() => _TopBarState();
@@ -144,7 +143,7 @@ class _TopBarState extends State<TopBar> {
                 width: 40,
               ),
               AppSmallText(
-                text: widget.text,
+                text: widget.text!,
                 color: AppColors.black100,
                 size: 20,
               ),
