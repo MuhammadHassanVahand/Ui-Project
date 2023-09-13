@@ -75,9 +75,9 @@ class _ShoppingCartState extends State<ShoppingCart> {
                   fit: BoxFit.cover),
             ),
           ),
-          addtoCart.isNotEmpty
-              ? Expanded(
-                  child: ListView.builder(
+          Expanded(
+            child: addtoCart.isNotEmpty
+                ? ListView.builder(
                     shrinkWrap: true,
                     itemCount: addtoCart.length,
                     itemBuilder: (context, index) {
@@ -207,13 +207,15 @@ class _ShoppingCartState extends State<ShoppingCart> {
                         ),
                       );
                     },
+                  )
+                : Center(
+                    child: AppSmallText(
+                      text: "Cart is Emplty",
+                      color: AppColors.black100,
+                      size: 20,
+                    ),
                   ),
-                )
-              : AppSmallText(
-                  text: "Cart is Emplty",
-                  color: AppColors.black100,
-                  size: 20,
-                ),
+          ),
           ItemTotalPrices(
               delivery: _delivery, subtotal: _subtotal, total: _total)
         ],

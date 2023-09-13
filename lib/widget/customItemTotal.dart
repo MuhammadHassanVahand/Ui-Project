@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mini_ui_project/constan/appButton.dart';
 import 'package:mini_ui_project/constan/appColors.dart';
 import 'package:mini_ui_project/data/addToCart.dart';
-import 'package:mini_ui_project/screens/address.dart';
+import 'package:mini_ui_project/screens/address/address.dart';
 import 'package:mini_ui_project/widget/appLargeText.dart';
 import 'package:mini_ui_project/widget/appSmallText.dart';
 

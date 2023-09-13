@@ -83,81 +83,98 @@ class _FavouriteListState extends State<FavouriteList>
             text: "Favourite",
           ),
           Expanded(
-              child: ListView.builder(
-            itemCount: favourite.length,
-            itemBuilder: (context, index) {
-              String itemKey = favourite[index]["name"];
-              bool itemExists =
-                  favourite.any((item) => item["name"] == itemKey);
-              return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 80,
-                  decoration: BoxDecoration(
-                      color: AppColors.yellow,
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ProductDetails(
-                                  itamName: favourite[index]["name"],
-                                  catchPhrase: favourite[index]["type"],
-                                  price: favourite[index]["price"],
-                                  details: favourite[index]["details"],
-                                  image: favourite[index]["image"][0],
-                                  imageCount: favourite[index]["image"].length,
-                                  imagesForSlider: favourite[index]["image"]),
-                            ));
-                      },
-                      child: ListTile(
-                        leading: Container(
-                          width: 50,
-                          height: 50,
+            child: favourite.isNotEmpty
+                ? ListView.builder(
+                    itemCount: favourite.length,
+                    itemBuilder: (context, index) {
+                      String itemKey = favourite[index]["name"];
+                      bool itemExists =
+                          favourite.any((item) => item["name"] == itemKey);
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          height: 80,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: AppColors.blue,
-                            image: DecorationImage(
-                              image: NetworkImage(favourite[index]["image"][0]),
-                              fit: BoxFit.cover,
+                              color: AppColors.yellow,
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => ProductDetails(
+                                          itamName: favourite[index]["name"],
+                                          catchPhrase: favourite[index]["type"],
+                                          price: favourite[index]["price"],
+                                          details: favourite[index]["details"],
+                                          image: favourite[index]["image"][0],
+                                          imageCount:
+                                              favourite[index]["image"].length,
+                                          imagesForSlider: favourite[index]
+                                              ["image"]),
+                                    ));
+                              },
+                              child: ListTile(
+                                leading: Container(
+                                  width: 50,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: AppColors.blue,
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                          favourite[index]["image"][0]),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                                title: AppSmallText(
+                                    text: favourite[index]["name"]),
+                                subtitle: AppSmallText(
+                                    text: "${favourite[index]["price"]}"),
+                                trailing: Column(
+                                  children: [
+                                    IconButton(
+                                        onPressed: () {
+                                          setState(() {
+                                            favourite.removeAt(index);
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              SnackBar(
+                                                content: Text(
+                                                    "Remove from favourite"),
+                                                duration:
+                                                    Duration(milliseconds: 600),
+                                              ),
+                                            );
+                                          });
+                                        },
+                                        icon: FaIcon(
+                                          FontAwesomeIcons.solidHeart,
+                                          color: itemExists
+                                              ? Colors.pink
+                                              : Colors.black,
+                                          size: 19,
+                                        )),
+                                  ],
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                        title: AppSmallText(text: favourite[index]["name"]),
-                        subtitle:
-                            AppSmallText(text: "${favourite[index]["price"]}"),
-                        trailing: Column(
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    favourite.removeAt(index);
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text("Remove from favourite"),
-                                        duration: Duration(milliseconds: 600),
-                                      ),
-                                    );
-                                  });
-                                },
-                                icon: FaIcon(
-                                  FontAwesomeIcons.solidHeart,
-                                  color:
-                                      itemExists ? Colors.pink : Colors.black,
-                                  size: 19,
-                                )),
-                          ],
-                        ),
-                      ),
+                      );
+                    },
+                  )
+                : Center(
+                    child: AppSmallText(
+                      text: "No Favourite item/s",
+                      color: AppColors.black100,
+                      size: 20,
                     ),
                   ),
-                ),
-              );
-            },
-          ))
+          ),
         ],
       ),
     ));
