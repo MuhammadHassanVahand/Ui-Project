@@ -8,7 +8,7 @@ import 'package:mini_ui_project/widget/appLargeText.dart';
 import 'package:mini_ui_project/widget/appSmallText.dart';
 
 class ItemDetails extends StatefulWidget {
-  final String image;
+  final List<String> imagesForSlider;
   final String itemName;
   final String catchPhrase;
   final double price;
@@ -22,8 +22,8 @@ class ItemDetails extends StatefulWidget {
     required this.details,
     this.offer = 30,
     required this.itemName,
-    required this.image,
     this.ontopUpdated,
+    required this.imagesForSlider,
   });
 
   @override
@@ -217,11 +217,11 @@ class _ItemDetailsState extends State<ItemDetails> {
                         } else {
                           Map<String, dynamic> item = {
                             "name": widget.itemName,
-                            "image": widget.image,
+                            "image": widget.imagesForSlider,
                             "type": widget.catchPhrase,
                             "price": widget.price.toDouble(),
                             "details": widget.details,
-                            "quantity": quantity
+                            "quantity": quantity.toInt()
                           };
                           addtoCart.add(item);
                           ScaffoldMessenger.of(context).showSnackBar(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mini_ui_project/constan/appButton.dart';
 import 'package:mini_ui_project/constan/appColors.dart';
+import 'package:mini_ui_project/data/addToCart.dart';
+import 'package:mini_ui_project/screens/address.dart';
 import 'package:mini_ui_project/widget/appLargeText.dart';
 import 'package:mini_ui_project/widget/appSmallText.dart';
 
@@ -8,13 +10,12 @@ class ItemTotalPrices extends StatefulWidget {
   final double delivery;
   final double subtotal;
   final double total;
-  final Function()? onPressed;
-  const ItemTotalPrices(
-      {super.key,
-      required this.delivery,
-      required this.subtotal,
-      required this.total,
-      this.onPressed});
+  const ItemTotalPrices({
+    super.key,
+    required this.delivery,
+    required this.subtotal,
+    required this.total,
+  });
 
   @override
   State<ItemTotalPrices> createState() => _ItemTotalPricesState();
@@ -92,7 +93,15 @@ class _ItemTotalPricesState extends State<ItemTotalPrices> {
               textColor: AppColors.black1,
               text: "Proceed To CheckOut",
               width: MediaQuery.of(context).size.width * 0.8,
-              onPressed: widget.onPressed,
+              onPressed: () {
+                if (addtoCart.isNotEmpty) {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AdressDetails(),
+                      ));
+                }
+              },
             )
           ],
         ),

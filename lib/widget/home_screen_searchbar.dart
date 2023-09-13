@@ -156,9 +156,12 @@ class _HomeScreenGridItemState extends State<HomeScreenGridItem> {
                   imageCount: widget.imageCount,
                   details: widget.details,
                   imagesForSlider: widget.imagesForSlider,
+                  onCartUpdated: widget.onCartUpdated,
+                  onTopUpdated: widget.ontopUpdated,
                 ),
               ),
             );
+            setState(() {});
           },
           child: Column(
             children: [

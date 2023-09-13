@@ -75,132 +75,145 @@ class _ShoppingCartState extends State<ShoppingCart> {
                   fit: BoxFit.cover),
             ),
           ),
-          Expanded(
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: addtoCart.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 4.0),
-                  child: Container(
-                    width: double.infinity,
-                    height: 80,
-                    decoration: BoxDecoration(
-                        color: AppColors.black20,
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Center(
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ProductDetails(
-                                  itamName: addtoCart[index]["name"],
-                                  catchPhrase: addtoCart[index]["type"],
-                                  price: addtoCart[index]["price"],
-                                  details: addtoCart[index]["details"],
-                                  image: addtoCart[index]["image"][0],
-                                  imageCount: addtoCart[index]["image"].length,
-                                  imagesForSlider: addtoCart[index]["image"]),
-                            ),
-                          );
-                        },
-                        child: ListTile(
-                          leading: Container(
-                            width: 60,
-                            height: 60,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              image: DecorationImage(
-                                  image: NetworkImage(
-                                    addtoCart[index]["image"][0],
+          addtoCart.isNotEmpty
+              ? Expanded(
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: addtoCart.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 4.0),
+                        child: Container(
+                          width: double.infinity,
+                          height: 80,
+                          decoration: BoxDecoration(
+                              color: AppColors.black20,
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Center(
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => ProductDetails(
+                                        itamName: addtoCart[index]["name"],
+                                        catchPhrase: addtoCart[index]["type"],
+                                        price: addtoCart[index]["price"],
+                                        details: addtoCart[index]["details"],
+                                        image: addtoCart[index]["image"][0],
+                                        imageCount:
+                                            addtoCart[index]["image"].length,
+                                        imagesForSlider: addtoCart[index]
+                                            ["image"]),
                                   ),
-                                  fit: BoxFit.cover),
-                            ),
-                            child: IconButton(
-                                icon: Icon(Icons.close),
-                                onPressed: () {
-                                  setState(() {
-                                    addtoCart.removeAt(index);
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text("Remove Successfully"),
-                                        duration: Duration(milliseconds: 600),
-                                      ),
-                                    );
-                                    _calculatePrices();
-                                  });
-                                }),
-                          ),
-                          title: AppLargeText(
-                            text: addtoCart[index]["name"],
-                            color: AppColors.black100,
-                            size: 15,
-                          ),
-                          subtitle: AppSmallText(
-                            text: "Rs.${addtoCart[index]["price"] - 30}",
-                            color: AppColors.black90,
-                            size: 17,
-                          ),
-                          trailing: Container(
-                            height: 70,
-                            width: 150,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                InkWell(
-                                  onTap: () {
-                                    int currentQuantity =
-                                        addtoCart[index]["quantity"];
-                                    if (currentQuantity > 1) {
-                                      _updateQuantity(
-                                          index, currentQuantity - 1);
-                                    }
-                                    ;
-                                  },
-                                  child: CircleAvatar(
-                                    radius: 15,
-                                    backgroundColor: AppColors.black10,
-                                    child: FaIcon(
-                                      FontAwesomeIcons.minus,
-                                      color: AppColors.black100,
-                                      size: 15,
-                                    ),
+                                );
+                              },
+                              child: ListTile(
+                                leading: Container(
+                                  width: 60,
+                                  height: 60,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    image: DecorationImage(
+                                        image: NetworkImage(
+                                          addtoCart[index]["image"][0],
+                                        ),
+                                        fit: BoxFit.cover),
                                   ),
+                                  child: IconButton(
+                                      icon: Icon(Icons.close),
+                                      onPressed: () {
+                                        setState(() {
+                                          addtoCart.removeAt(index);
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content:
+                                                  Text("Remove Successfully"),
+                                              duration:
+                                                  Duration(milliseconds: 600),
+                                            ),
+                                          );
+                                          _calculatePrices();
+                                        });
+                                      }),
                                 ),
-                                AppLargeText(
-                                  text: "${addtoCart[index]["quantity"]}",
+                                title: AppLargeText(
+                                  text: addtoCart[index]["name"],
                                   color: AppColors.black100,
-                                  size: 18,
+                                  size: 15,
                                 ),
-                                InkWell(
-                                  onTap: () {
-                                    int currentQuantity =
-                                        addtoCart[index]["quantity"];
+                                subtitle: AppSmallText(
+                                  text: "Rs.${addtoCart[index]["price"] - 30}",
+                                  color: AppColors.black90,
+                                  size: 17,
+                                ),
+                                trailing: Container(
+                                  height: 70,
+                                  width: 150,
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          int currentQuantity =
+                                              addtoCart[index]["quantity"];
+                                          if (currentQuantity > 1) {
+                                            _updateQuantity(
+                                                index, currentQuantity - 1);
+                                          }
+                                          ;
+                                        },
+                                        child: CircleAvatar(
+                                          radius: 15,
+                                          backgroundColor: AppColors.black10,
+                                          child: FaIcon(
+                                            FontAwesomeIcons.minus,
+                                            color: AppColors.black100,
+                                            size: 15,
+                                          ),
+                                        ),
+                                      ),
+                                      AppLargeText(
+                                        text: "${addtoCart[index]["quantity"]}",
+                                        color: AppColors.black100,
+                                        size: 18,
+                                      ),
+                                      InkWell(
+                                        onTap: () {
+                                          int currentQuantity =
+                                              addtoCart[index]["quantity"];
 
-                                    _updateQuantity(index, currentQuantity + 1);
-                                  },
-                                  child: CircleAvatar(
-                                    radius: 15,
-                                    backgroundColor: AppColors.black10,
-                                    child: FaIcon(
-                                      FontAwesomeIcons.plus,
-                                      color: AppColors.black100,
-                                      size: 15,
-                                    ),
+                                          _updateQuantity(
+                                              index, currentQuantity + 1);
+                                        },
+                                        child: CircleAvatar(
+                                          radius: 15,
+                                          backgroundColor: AppColors.black10,
+                                          child: FaIcon(
+                                            FontAwesomeIcons.plus,
+                                            color: AppColors.black100,
+                                            size: 15,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
-                              ],
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ),
+                      );
+                    },
                   ),
-                );
-              },
-            ),
-          ),
+                )
+              : AppSmallText(
+                  text: "Cart is Emplty",
+                  color: AppColors.black100,
+                  size: 20,
+                ),
           ItemTotalPrices(
               delivery: _delivery, subtotal: _subtotal, total: _total)
         ],

@@ -117,7 +117,15 @@ class TopBar extends StatefulWidget {
   final SvgPicture? svgPicture;
   final Function? ontopUpdated;
   final String? text;
-  const TopBar({super.key, this.svgPicture, this.ontopUpdated, this.text});
+  final Function? onGridUpdated;
+  final Function? onTopGridUpdated;
+  const TopBar(
+      {super.key,
+      this.svgPicture,
+      this.ontopUpdated,
+      this.text,
+      this.onGridUpdated,
+      this.onTopGridUpdated});
 
   @override
   State<TopBar> createState() => _TopBarState();
@@ -137,6 +145,9 @@ class _TopBarState extends State<TopBar> {
               InkWell(
                   onTap: () {
                     Navigator.pop(context);
+                    widget.onGridUpdated?.call();
+                    widget.onTopGridUpdated?.call();
+                    setState(() {});
                   },
                   child: AppIcons.backIcon),
               SizedBox(

@@ -20,6 +20,8 @@ class ProductDetails extends StatefulWidget {
   final String details;
   final int imageCount;
   final List<String> imagesForSlider;
+  final Function? onCartUpdated;
+  final Function? onTopUpdated;
   const ProductDetails({
     super.key,
     required this.itamName,
@@ -29,6 +31,8 @@ class ProductDetails extends StatefulWidget {
     required this.image,
     required this.imageCount,
     required this.imagesForSlider,
+    this.onCartUpdated,
+    this.onTopUpdated,
   });
 
   @override
@@ -47,6 +51,8 @@ class _ProductDetailsState extends State<ProductDetails> {
         body: Column(
           children: [
             TopBar(
+              onTopGridUpdated: widget.onTopUpdated,
+              onGridUpdated: widget.onCartUpdated,
               ontopUpdated: () {
                 setState(() {});
               },
@@ -65,8 +71,8 @@ class _ProductDetailsState extends State<ProductDetails> {
               price: widget.price,
               details: widget.details,
               itemName: widget.itamName,
-              image: widget.image,
               ontopUpdated: ontoptUpdated,
+              imagesForSlider: widget.imagesForSlider,
             ),
           ],
         ),
