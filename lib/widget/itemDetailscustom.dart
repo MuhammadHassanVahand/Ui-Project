@@ -4,6 +4,7 @@ import 'package:mini_ui_project/constan/appButton.dart';
 import 'package:mini_ui_project/constan/appColors.dart';
 import 'package:mini_ui_project/data/addToCart.dart';
 import 'package:mini_ui_project/screens/home.dart';
+import 'package:mini_ui_project/screens/shoppingBag.dart';
 import 'package:mini_ui_project/widget/appLargeText.dart';
 import 'package:mini_ui_project/widget/appSmallText.dart';
 
@@ -244,7 +245,50 @@ class _ItemDetailsState extends State<ItemDetails> {
                   width: 2,
                 ),
                 AppButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    String itemKey = widget.itemName;
+
+                    bool itemExists =
+                        addtoCart.any((item) => item["name"] == itemKey);
+
+                    if (itemExists) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text("Already in the cart"),
+                          duration: Duration(milliseconds: 600),
+                        ),
+                      );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ShoppingCart(),
+                        ),
+                      );
+                    } else {
+                      Map<String, dynamic> item = {
+                        "name": widget.itemName,
+                        "image": widget.imagesForSlider,
+                        "type": widget.catchPhrase,
+                        "price": widget.price.toDouble(),
+                        "details": widget.details,
+                        "quantity": quantity.toInt()
+                      };
+                      addtoCart.add(item);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ShoppingCart(),
+                        ),
+                      );
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text("Added Successfully to cart"),
+                          duration: Duration(milliseconds: 600),
+                        ),
+                      );
+                      widget.ontopUpdated?.call();
+                    }
+                  },
                   text: " Buy Now",
                   textColor: AppColors.black1,
                   width: MediaQuery.of(context).size.width * 0.49,

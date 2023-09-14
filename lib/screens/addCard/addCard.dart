@@ -131,7 +131,7 @@ class _AddCardState extends State<AddCard> {
               child: ItemTotalPrices(
                   buttonText: "Make A Payment",
                   onButtonPressed: () {
-                    setState(() {
+                    setState(() async {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -141,6 +141,7 @@ class _AddCardState extends State<AddCard> {
                       for (var item in addtoCart) {
                         addOrders(item);
                       }
+                      addtoCart.clear();
                     });
                   },
                   delivery: widget.delivery,
