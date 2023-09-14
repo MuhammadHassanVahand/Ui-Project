@@ -35,6 +35,10 @@ class _AddressTileState extends State<AddressTile> {
     });
   }
 
+  void updateAddress() {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -223,7 +227,7 @@ class _AddressTileState extends State<AddressTile> {
                         );
                       },
                     ),
-                    AddAddress(),
+                    AddAddress(updateAddress: updateAddress),
                   ],
                 ),
               ),

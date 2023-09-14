@@ -4,7 +4,8 @@ import 'package:mini_ui_project/screens/address/address.dart';
 import 'package:mini_ui_project/widget/appSmallText.dart';
 
 class AddAddress extends StatefulWidget {
-  const AddAddress({super.key});
+  final Function() updateAddress;
+  const AddAddress({super.key, required this.updateAddress});
 
   @override
   State<AddAddress> createState() => _AddAddressState();
@@ -57,6 +58,7 @@ class _AddAddressState extends State<AddAddress> {
                               "isSelected": false
                             };
                             address.add(addAdress);
+                            widget.updateAddress.call();
                             addressAddContoler.clear();
                             locationAddController.clear();
                             Navigator.pop(context);
