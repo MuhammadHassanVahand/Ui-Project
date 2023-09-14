@@ -4,6 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mini_ui_project/constan/appButton.dart';
 import 'package:mini_ui_project/constan/appColors.dart';
 import 'package:mini_ui_project/data/addToCart.dart';
+import 'package:mini_ui_project/screens/addCard/addCard.dart';
+import 'package:mini_ui_project/screens/address/address.dart';
 import 'package:mini_ui_project/screens/productDetails.dart';
 import 'package:mini_ui_project/widget/appLargeText.dart';
 import 'package:mini_ui_project/widget/appSmallText.dart';
@@ -217,7 +219,25 @@ class _ShoppingCartState extends State<ShoppingCart> {
                   ),
           ),
           ItemTotalPrices(
-              delivery: _delivery, subtotal: _subtotal, total: _total)
+            delivery: _delivery,
+            subtotal: _subtotal,
+            total: _total,
+            buttonText: 'Procced To CheckOut',
+            onButtonPressed: () {
+              if (addtoCart.isNotEmpty) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AdressDetails(
+                      delivery: _delivery,
+                      subTotal: _subtotal,
+                      total: _total,
+                    ),
+                  ),
+                );
+              }
+            },
+          )
         ],
       ),
     );
