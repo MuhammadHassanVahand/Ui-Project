@@ -167,14 +167,14 @@ class _TrackOrdersState extends State<TrackOrders> {
                             image: NetworkImage(
                                 "https://t4.ftcdn.net/jpg/02/65/42/55/360_F_265425516_wtAw64cGdOVvrdl64b5bsyBqcD0rkw1W.jpg"),
                             fit: BoxFit.cover),
-                        color: AppColors.orange,
+                        color: AppColors.black20,
                         borderRadius: BorderRadius.circular(20),
                       ),
                     ),
                     Positioned(
                       bottom: 0,
                       child: Container(
-                        width: double.infinity,
+                        width: MediaQuery.of(context).size.width * 0.92,
                         height: 70,
                         decoration: BoxDecoration(
                           color: AppColors.black10,

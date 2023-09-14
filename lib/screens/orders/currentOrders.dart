@@ -63,9 +63,9 @@ class _CurrentOrdersState extends State<CurrentOrders> {
                                   Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
-                                      AppSmallText(
+                                      AppLargeText(
                                         text: orders[index]["name"],
-                                        size: 17,
+                                        size: 11,
                                         color: AppColors.black100,
                                       ),
                                       SizedBox(
