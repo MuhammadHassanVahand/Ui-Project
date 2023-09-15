@@ -237,35 +237,38 @@ class _TrackOrdersState extends State<TrackOrders> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Row(
-                                children: [
-                                  CircleAvatar(
-                                    backgroundImage: NetworkImage(
-                                        "https://img.freepik.com/premium-vector/delivery-man-riding-red-scooter-illustration_9845-14.jpg"),
-                                    backgroundColor: AppColors.yellow,
-                                    radius: 30,
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      AppSmallText(
-                                        text: "Deivery Man",
-                                        color: AppColors.black100,
-                                        size: 17,
-                                      ),
-                                      AppLargeText(
-                                        text: "Driver",
-                                        color: AppColors.black100,
-                                        size: 17,
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                              Center(
+                                child: Row(
+                                  children: [
+                                    CircleAvatar(
+                                      backgroundImage: NetworkImage(
+                                          "https://img.freepik.com/premium-vector/delivery-man-riding-red-scooter-illustration_9845-14.jpg"),
+                                      backgroundColor: AppColors.yellow,
+                                      radius: 30,
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        AppSmallText(
+                                          text: "Deivery Man",
+                                          color: AppColors.black100,
+                                          size: 17,
+                                        ),
+                                        AppLargeText(
+                                          text: "Driver",
+                                          color: AppColors.black100,
+                                          size: 17,
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                               CircleAvatar(
                                 child: FaIcon(FontAwesomeIcons.solidMessage,

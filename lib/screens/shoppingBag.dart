@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:mini_ui_project/constan/appButton.dart';
 import 'package:mini_ui_project/constan/appColors.dart';
 import 'package:mini_ui_project/data/addToCart.dart';
-import 'package:mini_ui_project/screens/addCard/addCard.dart';
 import 'package:mini_ui_project/screens/address/address.dart';
 import 'package:mini_ui_project/screens/productDetails.dart';
 import 'package:mini_ui_project/widget/appLargeText.dart';
 import 'package:mini_ui_project/widget/appSmallText.dart';
 import 'package:mini_ui_project/widget/customItemTotal.dart';
-import 'package:mini_ui_project/widget/customListViewBuilder.dart';
 
 class ShoppingCart extends StatefulWidget {
   const ShoppingCart({super.key});
@@ -238,6 +234,13 @@ class _ShoppingCartState extends State<ShoppingCart> {
                       total: _total,
                       clearCart: clearCart,
                     ),
+                  ),
+                );
+              } else {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text("Cart is epmty!"),
+                    duration: Duration(milliseconds: 600),
                   ),
                 );
               }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mini_ui_project/constan/appColors.dart';
 import 'package:mini_ui_project/screens/orders/currentOrders.dart';
 import 'package:mini_ui_project/screens/orders/pastOrders.dart';
+import 'package:mini_ui_project/widget/appTopContainer.dart';
 
 class Orders extends StatefulWidget {
   const Orders({super.key});
@@ -29,14 +30,9 @@ class _OrdersState extends State<Orders> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: Text("Orders"),
-          iconTheme: IconThemeData(color: AppColors.black100),
-          backgroundColor: AppColors.black1,
-          titleTextStyle: TextStyle(color: AppColors.black100, fontSize: 20),
-        ),
         body: Column(
           children: [
+            TopBarOrders(text: "Orders"),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TabBar(

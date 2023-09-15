@@ -4,51 +4,6 @@ import 'package:mini_ui_project/constan/appColors.dart';
 import 'package:mini_ui_project/data/addToFavourie.dart';
 import 'package:mini_ui_project/screens/productDetails.dart';
 import 'package:mini_ui_project/widget/appSmallText.dart';
-import 'package:mini_ui_project/widget/appTopContainer.dart';
-import 'package:mini_ui_project/widget/home_screen_searchbar.dart';
-
-// class Favourite extends StatefulWidget {
-//   const Favourite({super.key});
-
-//   @override
-//   State<Favourite> createState() => _FavouriteState();
-// }
-
-// class _FavouriteState extends State<Favourite> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return SafeArea(
-//         child: Scaffold(
-//       body: Column(
-//         children: [
-//           const TopBar(text: "Favourite"),
-//           Expanded(
-//             child: Builder(builder: (context) {
-//               return GridView.builder(
-//                 gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-//                     maxCrossAxisExtent: 263,
-//                     crossAxisSpacing: 2,
-//                     mainAxisSpacing: 2),
-//                 itemCount: favourite.length,
-//                 itemBuilder: (context, index) {
-//                   return HomeScreenGridItem(
-//                     networkImage: favourite[index]["image"][0],
-//                     productName: favourite[index]["name"],
-//                     productType: favourite[index]["type"],
-//                     price: favourite[index]["price"],
-//                     details: favourite[index]["details"],
-//                     imageCount: favourite[index]["image"].length,
-//                     imagesForSlider: favourite[index]["image"],
-//                   );
-//                 },
-//               );
-//             }),
-//           )
-//         ],
-//       ),
-//     ));
-//   }
-// }
 
 class FavouriteList extends StatefulWidget {
   const FavouriteList({super.key});

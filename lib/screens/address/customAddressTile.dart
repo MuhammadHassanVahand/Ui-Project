@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:mini_ui_project/constan/appButton.dart';
 import 'package:mini_ui_project/constan/appColors.dart';
@@ -243,7 +242,7 @@ class _AddressTileState extends State<AddressTile> {
               Center(
                 child: AppButton(
                   onPressed: () {
-                    for (int i = 0; i < address.length; i++) {
+                    for (int i = 0; i < address.length;) {
                       if (address[i]["isSelected"] == true) {
                         Navigator.push(
                           context,
@@ -254,6 +253,14 @@ class _AddressTileState extends State<AddressTile> {
                               total: widget.total,
                               clearCart: widget.clearCart,
                             ),
+                          ),
+                        );
+                        break;
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text("Select Address!"),
+                            duration: Duration(milliseconds: 600),
                           ),
                         );
                         break;

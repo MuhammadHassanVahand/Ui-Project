@@ -1,13 +1,4 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mini_ui_project/constan/appButton.dart';
-import 'package:mini_ui_project/constan/appColors.dart';
-import 'package:mini_ui_project/constan/appIcons.dart';
-import 'package:mini_ui_project/data/addToCart.dart';
-import 'package:mini_ui_project/data/recomendedProduct.dart';
-import 'package:mini_ui_project/widget/appLargeText.dart';
-import 'package:mini_ui_project/widget/appSmallText.dart';
 import 'package:mini_ui_project/widget/appTopContainer.dart';
 import 'package:mini_ui_project/widget/home_slider.dart';
 import 'package:mini_ui_project/widget/itemDetailscustom.dart';

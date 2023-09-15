@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mini_ui_project/constan/appColors.dart';
-import 'package:mini_ui_project/constan/appIcons.dart';
 import 'package:mini_ui_project/data/recomendedProduct.dart';
-import 'package:mini_ui_project/widget/appLargeText.dart';
 import 'package:mini_ui_project/widget/appSmallText.dart';
 import 'package:mini_ui_project/widget/appTopContainer.dart';
 import 'package:mini_ui_project/widget/home_screen_searchbar.dart';

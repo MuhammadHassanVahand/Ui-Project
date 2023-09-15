@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mini_ui_project/constan/appColors.dart';
 import 'package:mini_ui_project/constan/appIcons.dart';
 import 'package:mini_ui_project/data/addToCart.dart';
+import 'package:mini_ui_project/screens/home.dart';
 import 'package:mini_ui_project/screens/shoppingBag.dart';
 import 'package:mini_ui_project/widget/appLargeText.dart';
 import 'package:mini_ui_project/widget/appSmallText.dart';
@@ -193,6 +194,51 @@ class _TopBarState extends State<TopBar> {
                   )),
             ],
           )
+        ],
+      ),
+    );
+  }
+}
+
+class TopBarOrders extends StatefulWidget {
+  final String text;
+  const TopBarOrders({super.key, required this.text});
+
+  @override
+  State<TopBarOrders> createState() => _TopBarOrdersState();
+}
+
+class _TopBarOrdersState extends State<TopBarOrders> {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              InkWell(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Home(),
+                      ),
+                    );
+                  },
+                  child: AppIcons.backIcon),
+              SizedBox(
+                width: 40,
+              ),
+              AppSmallText(
+                text: widget.text,
+                color: AppColors.black100,
+                size: 20,
+              ),
+            ],
+          ),
         ],
       ),
     );

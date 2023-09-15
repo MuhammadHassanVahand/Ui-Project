@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mini_ui_project/constan/appColors.dart';
-import 'package:mini_ui_project/constan/appIcons.dart';
 import 'package:mini_ui_project/data/categorydata.dart';
-import 'package:mini_ui_project/screens/categories_item/vegetables.dart';
 import 'package:mini_ui_project/widget/appLargeText.dart';
 import 'package:mini_ui_project/widget/appSmallText.dart';
 import 'package:mini_ui_project/widget/appTopContainer.dart';
-import 'package:mini_ui_project/widget/customGridView.dart';
 
 class Catedories extends StatefulWidget {
   const Catedories({super.key});
