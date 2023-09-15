@@ -242,8 +242,10 @@ class _AddressTileState extends State<AddressTile> {
               Center(
                 child: AppButton(
                   onPressed: () {
-                    for (int i = 0; i < address.length;) {
+                    bool isAddressSelected = false;
+                    for (int i = 0; i < address.length; i++) {
                       if (address[i]["isSelected"] == true) {
+                        isAddressSelected = true;
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -256,15 +258,15 @@ class _AddressTileState extends State<AddressTile> {
                           ),
                         );
                         break;
-                      } else {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text("Select Address!"),
-                            duration: Duration(milliseconds: 600),
-                          ),
-                        );
-                        break;
                       }
+                    }
+                    if (!isAddressSelected) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text("Select Address!"),
+                          duration: Duration(milliseconds: 600),
+                        ),
+                      );
                     }
                   },
                   textColor: AppColors.black1,

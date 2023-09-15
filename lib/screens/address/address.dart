@@ -29,7 +29,7 @@ class _AdressDetailsState extends State<AdressDetails> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Shpping beg"),
+          title: Text("Address"),
           iconTheme: IconThemeData(color: AppColors.black100),
           backgroundColor: AppColors.black1,
           titleTextStyle: TextStyle(color: AppColors.black100, fontSize: 20),
