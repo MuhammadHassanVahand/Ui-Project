@@ -55,11 +55,15 @@ class _ShoppingCartState extends State<ShoppingCart> {
     });
   }
 
+  void clearCart() {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Shpping beg"),
+        title: Text("Shpping bag"),
         iconTheme: IconThemeData(color: AppColors.black100),
         backgroundColor: AppColors.black1,
         titleTextStyle: TextStyle(color: AppColors.black100, fontSize: 20),
@@ -232,6 +236,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                       delivery: _delivery,
                       subTotal: _subtotal,
                       total: _total,
+                      clearCart: clearCart,
                     ),
                   ),
                 );

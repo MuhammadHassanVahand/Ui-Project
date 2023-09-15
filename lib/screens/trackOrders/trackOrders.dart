@@ -10,12 +10,14 @@ class TrackOrders extends StatefulWidget {
   final String imagesForSlider;
   final String productType;
   final double price;
+  final int quantity;
   const TrackOrders({
     super.key,
     required this.itemName,
     required this.imagesForSlider,
     required this.productType,
     required this.price,
+    required this.quantity,
   });
 
   @override
@@ -42,14 +44,17 @@ class _TrackOrdersState extends State<TrackOrders> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    width: double.infinity,
-                    height: 200,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
-                          image: NetworkImage(widget.imagesForSlider),
-                          fit: BoxFit.cover),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 30),
+                    child: Container(
+                      width: double.infinity,
+                      height: 200,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        image: DecorationImage(
+                            image: NetworkImage(widget.imagesForSlider),
+                            fit: BoxFit.cover),
+                      ),
                     ),
                   ),
                   Row(
@@ -137,20 +142,67 @@ class _TrackOrdersState extends State<TrackOrders> {
                       ),
                     ],
                   ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          AppSmallText(
+                            text: "Quantity",
+                            color: AppColors.black45,
+                            size: 18,
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          AppSmallText(
+                            text: "x ${widget.quantity}",
+                            color: AppColors.black100,
+                            size: 18,
+                          ),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          AppSmallText(
+                            text: "Total Price",
+                            color: AppColors.black45,
+                            size: 18,
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          AppSmallText(
+                            text: "Rs.${(widget.price - 30) * widget.quantity}",
+                            color: AppColors.black100,
+                            size: 18,
+                          ),
+                        ],
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
           ),
           collapsed: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(10),
                 topRight: Radius.circular(10),
               ),
             ),
-            child: Text(
-              " Order Details (ID # 789865462)",
-              style: TextStyle(fontSize: 20),
+            child: const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                " Order Details (ID # 789865462)",
+                style: TextStyle(fontSize: 20),
+              ),
             ),
           ),
           body: Column(

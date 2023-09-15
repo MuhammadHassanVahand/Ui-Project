@@ -14,11 +14,13 @@ class AddCard extends StatefulWidget {
   final double delivery;
   final double subTotal;
   final double total;
+  final Function() clearCart;
   const AddCard(
       {super.key,
       required this.delivery,
       required this.subTotal,
-      required this.total});
+      required this.total,
+      required this.clearCart});
 
   @override
   State<AddCard> createState() => _AddCardState();
@@ -142,6 +144,7 @@ class _AddCardState extends State<AddCard> {
                         addOrders(item);
                       }
                       addtoCart.clear();
+                      widget.clearCart.call();
                     });
                   },
                   delivery: widget.delivery,

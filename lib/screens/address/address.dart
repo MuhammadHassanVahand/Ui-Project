@@ -16,11 +16,13 @@ class AdressDetails extends StatefulWidget {
   final double delivery;
   final double subTotal;
   final double total;
+  final Function() clearCart;
   const AdressDetails(
       {super.key,
       required this.delivery,
       required this.subTotal,
-      required this.total});
+      required this.total,
+      required this.clearCart});
 
   @override
   State<AdressDetails> createState() => _AdressDetailsState();
@@ -42,6 +44,7 @@ class _AdressDetailsState extends State<AdressDetails> {
           delivery: widget.delivery,
           subTotal: widget.subTotal,
           total: widget.total,
+          clearCart: widget.clearCart,
         )),
       ),
     );

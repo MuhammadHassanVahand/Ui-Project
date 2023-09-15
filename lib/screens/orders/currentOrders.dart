@@ -147,6 +147,7 @@ class _CurrentOrdersState extends State<CurrentOrders> {
                                           itemName: orders[index]["name"],
                                           price: orders[index]["price"],
                                           productType: orders[index]["type"],
+                                          quantity: orders[index]["quantity"],
                                         ),
                                       ),
                                     );

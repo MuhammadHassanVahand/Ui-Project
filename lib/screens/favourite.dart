@@ -77,11 +77,14 @@ class _FavouriteListState extends State<FavouriteList>
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+      appBar: AppBar(
+        title: Text("Favourite"),
+        iconTheme: IconThemeData(color: AppColors.black100),
+        backgroundColor: AppColors.black1,
+        titleTextStyle: TextStyle(color: AppColors.black100, fontSize: 20),
+      ),
       body: Column(
         children: [
-          TopBar(
-            text: "Favourite",
-          ),
           Expanded(
             child: favourite.isNotEmpty
                 ? ListView.builder(

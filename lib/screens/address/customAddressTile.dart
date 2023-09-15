@@ -11,11 +11,13 @@ class AddressTile extends StatefulWidget {
   final double delivery;
   final double subTotal;
   final double total;
+  final Function() clearCart;
   const AddressTile(
       {super.key,
       required this.delivery,
       required this.subTotal,
-      required this.total});
+      required this.total,
+      required this.clearCart});
 
   @override
   State<AddressTile> createState() => _AddressTileState();
@@ -250,6 +252,7 @@ class _AddressTileState extends State<AddressTile> {
                               delivery: widget.delivery,
                               subTotal: widget.subTotal,
                               total: widget.total,
+                              clearCart: widget.clearCart,
                             ),
                           ),
                         );
