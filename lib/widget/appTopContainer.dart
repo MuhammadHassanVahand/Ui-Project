@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mini_ui_project/constan/appColors.dart';
 import 'package:mini_ui_project/constan/appIcons.dart';
 import 'package:mini_ui_project/data/addToCart.dart';
-import 'package:mini_ui_project/screens/home.dart';
+import 'package:mini_ui_project/screens/home_screen.dart';
 import 'package:mini_ui_project/screens/shoppingBag.dart';
 import 'package:mini_ui_project/widget/appLargeText.dart';
 import 'package:mini_ui_project/widget/appSmallText.dart';
@@ -224,7 +224,7 @@ class _TopBarOrdersState extends State<TopBarOrders> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Home(),
+                        builder: (context) => HomeScreen(),
                       ),
                     );
                   },

@@ -11,6 +11,7 @@ class TrackOrders extends StatefulWidget {
   final String productType;
   final double price;
   final int quantity;
+  final String address;
   const TrackOrders({
     super.key,
     required this.itemName,
@@ -18,6 +19,7 @@ class TrackOrders extends StatefulWidget {
     required this.productType,
     required this.price,
     required this.quantity,
+    required this.address,
   });
 
   @override
@@ -330,7 +332,7 @@ class _TrackOrdersState extends State<TrackOrders> {
                           color: AppColors.black45,
                         ),
                         AppSmallText(
-                          text: "37 New line, Sunamganj",
+                          text: widget.address,
                           color: AppColors.black100,
                         )
                       ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mini_ui_project/constan/appColors.dart';
 import 'package:mini_ui_project/data/addToCart.dart';
+import 'package:mini_ui_project/screens/address/address.dart';
 import 'package:mini_ui_project/screens/orders/currentOrders.dart';
 import 'package:mini_ui_project/screens/orders/orders.dart';
 import 'package:mini_ui_project/widget/appSmallText.dart';
@@ -142,6 +143,13 @@ class _AddCardState extends State<AddCard> {
                       );
                       for (var item in addtoCart) {
                         addOrders(item);
+                        for (var i = 0; i < address.length; i++) {
+                          if (address[i]["isSelected"] == true) {
+                            for (var item in orders) {
+                              item["address"] = address[i]["address"];
+                            }
+                          }
+                        }
                       }
                       addtoCart.clear();
                       widget.clearCart.call();

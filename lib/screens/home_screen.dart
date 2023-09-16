@@ -61,38 +61,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// BottomNavigationBar(
-        //   currentIndex: _selectIndex,
-        //   onTap: (index) {
-        //     setState(() {
-        //       _selectIndex = index;
-        //     });
-        //   },
-        //   selectedIconTheme: const IconThemeData(color: Colors.black, size: 30),
-        //   selectedItemColor: Colors.blue,
-        //   items: const [
-        //     BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-        //     BottomNavigationBarItem(
-        //         icon: Icon(Icons.category_outlined), label: "Category"),
-        //     BottomNavigationBarItem(
-        //         icon: Icon(Icons.favorite), label: "Favorite"),
-        //   ],
-        // ),
